@@ -1179,6 +1179,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 392c5b0ebab1d409eb4a728948b4bd02, type: 3}
+--- !u!1 &1056451376 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6213561570193181483, guid: 1a98558d3202c4f928cee3c9bebbe385,
+    type: 3}
+  m_PrefabInstance: {fileID: 6213561569992747331}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1309870669
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1685,6 +1691,7 @@ GameObject:
   - component: {fileID: 1848169728}
   - component: {fileID: 1848169727}
   - component: {fileID: 1848169729}
+  - component: {fileID: 1848169730}
   m_Layer: 0
   m_Name: Camera
   m_TagString: MainCamera
@@ -1790,6 +1797,24 @@ MonoBehaviour:
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1848169730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1848169725}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01df70be4243447aa8fac3a293212ed2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DistanceToPlayer: 30
+  TransparentMaterial: {fileID: 2100000, guid: b1603628939834690928a75bed44b34c, type: 2}
+  FadeInTimeout: 0.6
+  FadeOutTimeout: 0.2
+  TargetTransparency: 0.3
+  player: {fileID: 1056451376}
 --- !u!1 &2026873429
 GameObject:
   m_ObjectHideFlags: 3
