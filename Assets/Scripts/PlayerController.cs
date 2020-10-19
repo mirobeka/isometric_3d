@@ -6,7 +6,8 @@ public class PlayerController : MonoBehaviour
 {
 
     public CharacterController controller;
-    public float moveSpeed = 2f;
+    public float walkSpeed = 2f;
+    public float runSpeed = 4.5f;
     public float turnSmoothTime = 0.05f;
     // this is here because of weird blender export and rotations
     // public float defaultRotationX = 0f;
@@ -22,16 +23,12 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         float speed = Move();
-        if (speed >= 0.1f)
-        {
-            // Set the animator - is moving to True so we have moving animation
-            animator.SetBool("IsMoving", true);
-        }
-        else
-        {
-            // Set the animator - is moving to False so we have idle animation
-            animator.SetBool("IsMoving", false);
-        }
+        // Set the animator
+        bool isWalking = speed >= 0.1f;
+        bool isRunning = Input.GetKey("left shift");
+
+        animator.SetBool("IsWalking", isWalking);
+        animator.SetBool("IsRunning", isRunning);
     }
 
     float Move()
@@ -41,6 +38,11 @@ public class PlayerController : MonoBehaviour
         // isometric view
         Vector3 horizontal = rightDirection * Input.GetAxisRaw("Horizontal");
         Vector3 vertical = forwardDirection * Input.GetAxisRaw("Vertical");
+
+        // check if player is running
+        bool isRunning = Input.GetKey("left shift");
+        float moveSpeed = isRunning ? runSpeed : walkSpeed;
+
         // create direction vector
         Vector3 direction = Vector3.Normalize(horizontal + vertical);
 
