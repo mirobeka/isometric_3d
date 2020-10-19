@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class PlayerHealth : MonoBehaviour
 {
     public float health = 100f;
+    public HealthBar healthBar;
 
     public Renderer mesh;
     public Color collideColor;
@@ -15,12 +16,14 @@ public class PlayerHealth : MonoBehaviour
     void Start()
     {
         normalColor = mesh.material.color;
+        healthBar.SetMaxHealth(health);
     }
 
 
     public void TakeDamage(float amount)
     {
         health -= amount;
+        healthBar.SetHealth(health);
 
         // takes damage - flash the player
         StartCoroutine("Flasher");

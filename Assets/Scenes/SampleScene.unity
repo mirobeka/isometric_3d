@@ -112,6 +112,105 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &1272242
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1272246}
+  - component: {fileID: 1272245}
+  - component: {fileID: 1272244}
+  - component: {fileID: 1272243}
+  m_Layer: 5
+  m_Name: UI
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1272243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1272242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1301386320, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+--- !u!114 &1272244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1272242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UiScaleMode: 0
+  m_ReferencePixelsPerUnit: 100
+  m_ScaleFactor: 1
+  m_ReferenceResolution: {x: 800, y: 600}
+  m_ScreenMatchMode: 0
+  m_MatchWidthOrHeight: 0
+  m_PhysicalUnit: 3
+  m_FallbackScreenDPI: 96
+  m_DefaultSpriteDPI: 96
+  m_DynamicPixelsPerUnit: 1
+--- !u!223 &1272245
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1272242}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 0
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
+--- !u!224 &1272246
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1272242}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_Children:
+  - {fileID: 296916575}
+  m_Father: {fileID: 0}
+  m_RootOrder: 26
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0, y: 0}
 --- !u!1001 &69898280
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -179,8 +278,85 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bytovka (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 3486168678815054903, guid: 392c5b0ebab1d409eb4a728948b4bd02,
+        type: 3}
+      propertyPath: m_Layer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 392c5b0ebab1d409eb4a728948b4bd02, type: 3}
+--- !u!1 &92868193
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 92868194}
+  - component: {fileID: 92868196}
+  - component: {fileID: 92868195}
+  m_Layer: 5
+  m_Name: Fill
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &92868194
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 92868193}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 296916575}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &92868195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 92868193}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.6698113, g: 0.19272871, b: 0.19272871, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+--- !u!222 &92868196
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 92868193}
+  m_CullTransparentMesh: 0
 --- !u!1001 &107624467
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -247,6 +423,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Bytovka (15)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3486168678815054903, guid: 392c5b0ebab1d409eb4a728948b4bd02,
+        type: 3}
+      propertyPath: m_Layer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 392c5b0ebab1d409eb4a728948b4bd02, type: 3}
@@ -317,6 +498,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bytovka (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 3486168678815054903, guid: 392c5b0ebab1d409eb4a728948b4bd02,
+        type: 3}
+      propertyPath: m_Layer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 392c5b0ebab1d409eb4a728948b4bd02, type: 3}
 --- !u!1 &170076733
@@ -382,7 +568,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 170076733}
   m_LocalRotation: {x: 0.41252053, y: 0.196933, z: -0.091831364, w: 0.8846532}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
+  m_LocalPosition: {x: 0, y: 17.99, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -455,6 +641,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bytovka (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 3486168678815054903, guid: 392c5b0ebab1d409eb4a728948b4bd02,
+        type: 3}
+      propertyPath: m_Layer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 392c5b0ebab1d409eb4a728948b4bd02, type: 3}
 --- !u!1001 &186920968
@@ -523,6 +714,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Bytovka (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3486168678815054903, guid: 392c5b0ebab1d409eb4a728948b4bd02,
+        type: 3}
+      propertyPath: m_Layer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 392c5b0ebab1d409eb4a728948b4bd02, type: 3}
@@ -593,8 +789,112 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bytovka (16)
       objectReference: {fileID: 0}
+    - target: {fileID: 3486168678815054903, guid: 392c5b0ebab1d409eb4a728948b4bd02,
+        type: 3}
+      propertyPath: m_Layer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 392c5b0ebab1d409eb4a728948b4bd02, type: 3}
+--- !u!1 &296916574
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 296916575}
+  - component: {fileID: 296916577}
+  - component: {fileID: 296916576}
+  m_Layer: 5
+  m_Name: HealthBar
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &296916575
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 296916574}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1434414389}
+  - {fileID: 92868194}
+  m_Father: {fileID: 1272246}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 157, y: -29.1}
+  m_SizeDelta: {x: 279.80835, y: 25.442322}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &296916576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 296916574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 325ea8e09314b4a0e9d81cd3db9fe149, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slider: {fileID: 296916577}
+--- !u!114 &296916577
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 296916574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -113659843, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 0
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 0}
+  m_FillRect: {fileID: 92868194}
+  m_HandleRect: {fileID: 0}
+  m_Direction: 0
+  m_MinValue: 0
+  m_MaxValue: 1
+  m_WholeNumbers: 0
+  m_Value: 1
+  m_OnValueChanged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &357244082
 GameObject:
   m_ObjectHideFlags: 0
@@ -625,7 +925,7 @@ Transform:
   - {fileID: 1848169726}
   - {fileID: 2099443610}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 30, y: 45, z: 0}
 --- !u!1001 &442400991
 PrefabInstance:
@@ -693,6 +993,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Bytovka (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3486168678815054903, guid: 392c5b0ebab1d409eb4a728948b4bd02,
+        type: 3}
+      propertyPath: m_Layer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 392c5b0ebab1d409eb4a728948b4bd02, type: 3}
@@ -763,6 +1068,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bytovka (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 3486168678815054903, guid: 392c5b0ebab1d409eb4a728948b4bd02,
+        type: 3}
+      propertyPath: m_Layer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 392c5b0ebab1d409eb4a728948b4bd02, type: 3}
 --- !u!1001 &457544557
@@ -832,6 +1142,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bytovka (18)
       objectReference: {fileID: 0}
+    - target: {fileID: 3486168678815054903, guid: 392c5b0ebab1d409eb4a728948b4bd02,
+        type: 3}
+      propertyPath: m_Layer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 392c5b0ebab1d409eb4a728948b4bd02, type: 3}
 --- !u!1001 &516986479
@@ -879,7 +1194,7 @@ PrefabInstance:
     - target: {fileID: 3486168678814883863, guid: 392c5b0ebab1d409eb4a728948b4bd02,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3486168678814883863, guid: 392c5b0ebab1d409eb4a728948b4bd02,
         type: 3}
@@ -900,6 +1215,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Bytovka (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3486168678815054903, guid: 392c5b0ebab1d409eb4a728948b4bd02,
+        type: 3}
+      propertyPath: m_Layer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 392c5b0ebab1d409eb4a728948b4bd02, type: 3}
@@ -970,8 +1290,79 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bytovka (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 3486168678815054903, guid: 392c5b0ebab1d409eb4a728948b4bd02,
+        type: 3}
+      propertyPath: m_Layer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 392c5b0ebab1d409eb4a728948b4bd02, type: 3}
+--- !u!1 &674843132
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 674843135}
+  - component: {fileID: 674843134}
+  - component: {fileID: 674843133}
+  m_Layer: 0
+  m_Name: EventSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &674843133
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 674843132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1077351063, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HorizontalAxis: Horizontal
+  m_VerticalAxis: Vertical
+  m_SubmitButton: Submit
+  m_CancelButton: Cancel
+  m_InputActionsPerSecond: 10
+  m_RepeatDelay: 0.5
+  m_ForceModuleActive: 0
+--- !u!114 &674843134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 674843132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -619905303, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_FirstSelected: {fileID: 0}
+  m_sendNavigationEvents: 1
+  m_DragThreshold: 10
+--- !u!4 &674843135
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 674843132}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 27
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &771937527
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1017,7 +1408,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6a9001ab35cb7486cb2a4748f024e441, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6a9001ab35cb7486cb2a4748f024e441, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1100,6 +1491,7 @@ MonoBehaviour:
     type: 3}
   attackPoint: {fileID: 2119037080}
   shootForce: 7
+  rateOfFire: 30
 --- !u!4 &771937533 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 6a9001ab35cb7486cb2a4748f024e441,
@@ -1173,6 +1565,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bytovka (14)
       objectReference: {fileID: 0}
+    - target: {fileID: 3486168678815054903, guid: 392c5b0ebab1d409eb4a728948b4bd02,
+        type: 3}
+      propertyPath: m_Layer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 392c5b0ebab1d409eb4a728948b4bd02, type: 3}
 --- !u!1001 &998254035
@@ -1241,6 +1638,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Bytovka (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3486168678815054903, guid: 392c5b0ebab1d409eb4a728948b4bd02,
+        type: 3}
+      propertyPath: m_Layer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 392c5b0ebab1d409eb4a728948b4bd02, type: 3}
@@ -1317,6 +1719,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bytovka (19)
       objectReference: {fileID: 0}
+    - target: {fileID: 3486168678815054903, guid: 392c5b0ebab1d409eb4a728948b4bd02,
+        type: 3}
+      propertyPath: m_Layer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 392c5b0ebab1d409eb4a728948b4bd02, type: 3}
 --- !u!1001 &1309870669
@@ -1385,6 +1792,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Bytovka (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3486168678815054903, guid: 392c5b0ebab1d409eb4a728948b4bd02,
+        type: 3}
+      propertyPath: m_Layer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 392c5b0ebab1d409eb4a728948b4bd02, type: 3}
@@ -1455,8 +1867,85 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bytovka (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 3486168678815054903, guid: 392c5b0ebab1d409eb4a728948b4bd02,
+        type: 3}
+      propertyPath: m_Layer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 392c5b0ebab1d409eb4a728948b4bd02, type: 3}
+--- !u!1 &1434414388
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1434414389}
+  - component: {fileID: 1434414391}
+  - component: {fileID: 1434414390}
+  m_Layer: 5
+  m_Name: Border
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1434414389
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1434414388}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 296916575}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -0.000061035156, y: 0.000061035156}
+  m_SizeDelta: {x: -0.19152832, y: -0.81152344}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1434414390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1434414388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+--- !u!222 &1434414391
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1434414388}
+  m_CullTransparentMesh: 0
 --- !u!1001 &1435095351
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1523,6 +2012,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Bytovka (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3486168678815054903, guid: 392c5b0ebab1d409eb4a728948b4bd02,
+        type: 3}
+      propertyPath: m_Layer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 392c5b0ebab1d409eb4a728948b4bd02, type: 3}
@@ -1592,6 +2086,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Bytovka (17)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3486168678815054903, guid: 392c5b0ebab1d409eb4a728948b4bd02,
+        type: 3}
+      propertyPath: m_Layer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 392c5b0ebab1d409eb4a728948b4bd02, type: 3}
@@ -1742,6 +2241,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bytovka (20)
       objectReference: {fileID: 0}
+    - target: {fileID: 3486168678815054903, guid: 392c5b0ebab1d409eb4a728948b4bd02,
+        type: 3}
+      propertyPath: m_Layer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 392c5b0ebab1d409eb4a728948b4bd02, type: 3}
 --- !u!1001 &1818994730
@@ -1789,7 +2293,7 @@ PrefabInstance:
     - target: {fileID: 3486168678814883863, guid: 392c5b0ebab1d409eb4a728948b4bd02,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3486168678814883863, guid: 392c5b0ebab1d409eb4a728948b4bd02,
         type: 3}
@@ -1810,6 +2314,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Bytovka (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3486168678815054903, guid: 392c5b0ebab1d409eb4a728948b4bd02,
+        type: 3}
+      propertyPath: m_Layer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 392c5b0ebab1d409eb4a728948b4bd02, type: 3}
@@ -2015,6 +2524,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
+  healthBar: {fileID: 296916576}
   mesh: {fileID: 1010253608}
   collideColor: {r: 0.9056604, g: 0, b: 0, a: 0}
 --- !u!1 &2026873429
@@ -2157,7 +2667,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6a9001ab35cb7486cb2a4748f024e441, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6a9001ab35cb7486cb2a4748f024e441, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2319,7 +2829,7 @@ PrefabInstance:
     - target: {fileID: 3486168678814883863, guid: 392c5b0ebab1d409eb4a728948b4bd02,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3486168678814883863, guid: 392c5b0ebab1d409eb4a728948b4bd02,
         type: 3}
@@ -2340,6 +2850,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Bytovka
+      objectReference: {fileID: 0}
+    - target: {fileID: 3486168678815054903, guid: 392c5b0ebab1d409eb4a728948b4bd02,
+        type: 3}
+      propertyPath: m_Layer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 392c5b0ebab1d409eb4a728948b4bd02, type: 3}

@@ -30,8 +30,10 @@ public class ClearSight : MonoBehaviour
         // TODO: setup your layermask it improve performance and filter your hits. 
         Vector3 direction = Vector3.Normalize(player.transform.position - transform.position);
 
+        int layerMask = 1 << 1;
+
         //hits = Physics.RaycastAll(transform.position, direction, distanceToPlayer);
-        hits = Physics.CapsuleCastAll(transform.position, transform.position, transparencyRadius, direction, distanceToPlayer-transparencyRadius);
+        hits = Physics.CapsuleCastAll(transform.position, transform.position, transparencyRadius, direction, distanceToPlayer-transparencyRadius, layerMask);
 
         foreach (RaycastHit hit in hits)
         {
