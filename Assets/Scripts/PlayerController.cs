@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     public float walkSpeed = 2f;
     public float runSpeed = 4.5f;
     public float turnSmoothTime = 0.05f;
+    public float pushPower = 2.0f;
     // this is here because of weird blender export and rotations
     // public float defaultRotationX = 0f;
     public Animator animator;
@@ -18,6 +19,10 @@ public class PlayerController : MonoBehaviour
     // isometric direction vectors
     private Vector3 forwardDirection = new Vector3(0.6f, 0f, 0.6f);
     private Vector3 rightDirection = new Vector3(0.6f, 0f, -0.6f);
+
+    // using this for gravity
+    private float vSpeed = 0f;
+    private float gravity = -9.81f;
 
     // Update is called once per frame
     void Update()
@@ -61,7 +66,41 @@ public class PlayerController : MonoBehaviour
             controller.Move(direction * moveSpeed * Time.deltaTime);
         }
 
+        // gravity
+        vSpeed += gravity * Time.deltaTime;
+        if (controller.isGrounded)
+            vSpeed = 0f;
+        Vector3 velocity = new Vector3(0f, vSpeed, 0f);
+        controller.Move(velocity * Time.deltaTime);
+
         // return speed for other purposes
         return direction.magnitude;
+    }
+
+    void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        // ITERACT WITH RIGIDBODY
+        Rigidbody body = hit.collider.attachedRigidbody;
+        // no rigidbody
+        if (body == null || body.isKinematic)
+        {
+            return;
+        }
+
+        // We dont want to push objects below us
+        if (hit.moveDirection.y < -0.3)
+        {
+            return;
+        }
+
+        // Calculate push direction from move direction,
+        // we only push objects to the sides never up and down
+        Vector3 pushDir = new Vector3(hit.moveDirection.x, 0, hit.moveDirection.z);
+
+        // If you know how fast your character is trying to move,
+        // then you can also multiply the push velocity by that.
+
+        // Apply the push
+        body.velocity = pushDir * pushPower;
     }
 }

@@ -15,10 +15,10 @@ TagManager:
   - 
   - PostProcessing
   - 
-  - IgnoreClearSight
-  - 
-  - 
-  - 
+  - Player
+  - Enemy
+  - MovableObstacles
+  - Buildings
   - 
   - 
   - 
