@@ -16,7 +16,7 @@ public class EnemyController : MonoBehaviour
     public float walkPointRange = 10;
 
     // States
-    public float sightRange, attackRange = 10;
+    public float sightRange, attackRange, changeAndAttackRange = 10;
     public bool playerInSightRange, playerInAttackRange;
 
     // Shooting
@@ -40,7 +40,8 @@ public class EnemyController : MonoBehaviour
         playerInSight = !Physics.Linecast(transform.position, player.transform.position, whatIsObstacle);
 
         if (!playerInSightRange && !playerInAttackRange) Patroling();
-        if (playerInSightRange && !playerInAttackRange) ChasePlayer();
+        if (playerInSightRange && !playerInAttackRange && !playerInSight) Patroling();
+        if (playerInSightRange && !playerInAttackRange && playerInSight) ChasePlayer();
         if (playerInSightRange && playerInAttackRange && !playerInSight) ChasePlayer();
         if (playerInSightRange && playerInAttackRange && playerInSight) AttackPlayer();
 
@@ -56,7 +57,7 @@ public class EnemyController : MonoBehaviour
             agent.SetDestination(walkPoint);
 
         Vector3 distanceToWalkPoint = transform.position - walkPoint;
-        if (distanceToWalkPoint.magnitude < 2f)
+        if (distanceToWalkPoint.magnitude < agent.stoppingDistance)
             walkPointSet = false;
     }
 
@@ -83,7 +84,7 @@ public class EnemyController : MonoBehaviour
 
         // if distance is not so much, shoot some hearths
         float distanceToPlayer = Vector3.Magnitude(player.transform.position - transform.position);
-        if (distanceToPlayer < 7f && playerInSight)
+        if (distanceToPlayer < changeAndAttackRange && playerInSight)
             Shoot();
     }
 
@@ -116,8 +117,9 @@ public class EnemyController : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, attackRange);
-
         Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position, changeAndAttackRange);
+        Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(transform.position, sightRange);
 
         Gizmos.DrawCube(walkPoint, new Vector3(0.1f, 15f, 0.1f));

@@ -27,10 +27,10 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float speed = Move();
+        float velocity = Move();
         // Set the animator
-        bool isWalking = speed >= 0.1f;
-        bool isRunning = Input.GetKey("left shift");
+        bool isWalking = velocity >= 0.1f;
+        bool isRunning = velocity > 2.1f;
 
         animator.SetBool("IsWalking", isWalking);
         animator.SetBool("IsRunning", isRunning);
@@ -50,6 +50,7 @@ public class PlayerController : MonoBehaviour
 
         // create direction vector
         Vector3 direction = Vector3.Normalize(horizontal + vertical);
+        Vector3 speed = new Vector3(0f, 0f, 0f);
 
         if (direction.magnitude >= 0.1f)
         {
@@ -63,7 +64,8 @@ public class PlayerController : MonoBehaviour
             transform.rotation = Quaternion.Euler(0f, angle, 0f);
 
             // use character controller for movement
-            controller.Move(direction * moveSpeed * Time.deltaTime);
+            speed = direction * moveSpeed;
+            controller.Move(speed * Time.deltaTime);
         }
 
         // gravity
@@ -73,8 +75,8 @@ public class PlayerController : MonoBehaviour
         Vector3 velocity = new Vector3(0f, vSpeed, 0f);
         controller.Move(velocity * Time.deltaTime);
 
-        // return speed for other purposes
-        return direction.magnitude;
+        // return velocity for other purposes
+        return speed.magnitude;
     }
 
     void OnControllerColliderHit(ControllerColliderHit hit)
