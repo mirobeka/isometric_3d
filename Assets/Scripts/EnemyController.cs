@@ -23,7 +23,7 @@ public class EnemyController : MonoBehaviour
     public GameObject projectilePrefab;
     public GameObject shootPoint;
     public float shootForce = 7f;
-    public int rateOfFire = 1;
+    public float rateOfFire = 1;
     public bool alreadyAttacked, playerInSight;
 
     void Awake(){

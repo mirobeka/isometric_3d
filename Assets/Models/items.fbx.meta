@@ -4,11 +4,21 @@ ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
+    100002: Building.001
+    100004: Hearth
     400000: //RootNode
+    400002: Building.001
+    400004: Hearth
     2100000: Material
     2300000: //RootNode
+    2300002: Building.001
+    2300004: Hearth
     3300000: //RootNode
+    3300002: Building.001
+    3300004: Hearth
     4300000: Cube
+    4300002: Hearth
+    4300004: Building.001
   externalObjects: {}
   materials:
     importMaterials: 1
