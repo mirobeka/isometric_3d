@@ -6512,7 +6512,7 @@ CharacterController:
   m_Height: 2.1
   m_Radius: 0.56
   m_SlopeLimit: 45
-  m_StepOffset: 0.24
+  m_StepOffset: 0.3
   m_SkinWidth: 0.0001
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 1, z: 0}
@@ -6854,6 +6854,14 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 58cb8fa57e5e147b3827fc67a779de20, type: 2}
+    - target: {fileID: 13700000, guid: 6a9001ab35cb7486cb2a4748f024e441, type: 3}
+      propertyPath: m_CastShadows
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 13700000, guid: 6a9001ab35cb7486cb2a4748f024e441, type: 3}
+      propertyPath: m_ReceiveShadows
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6a9001ab35cb7486cb2a4748f024e441, type: 3}
 --- !u!1 &2099443609

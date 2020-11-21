@@ -22,7 +22,7 @@ public class PlayerHealth : MonoBehaviour
 
     public void TakeDamage(float amount)
     {
-        health -= amount;
+        health -= amount*0.1f;
         healthBar.SetHealth(health);
 
         // takes damage - flash the player

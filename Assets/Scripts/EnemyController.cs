@@ -100,8 +100,18 @@ public class EnemyController : MonoBehaviour
     {
         if (!alreadyAttacked){
             // TODO: add shotgun style of shooting (multiple projectiles, spread)
-            GameObject projectile = Instantiate(projectilePrefab, shootPoint.transform.position, shootPoint.transform.rotation);
-            projectile.GetComponent<Rigidbody>().AddForce(transform.forward.normalized * shootForce, ForceMode.Impulse);
+            int noOfProjectiles = Random.Range(2, 5);
+            for (int i=0; i < noOfProjectiles; i++)
+            {
+                GameObject projectile = Instantiate(projectilePrefab, shootPoint.transform.position, shootPoint.transform.rotation);
+                Vector3 direction = transform.forward.normalized * shootForce;
+                // randomize shells
+                float x = Random.Range(-0.1f, 0.1f);
+                float y = Random.Range(-0.1f, 0.1f);
+                Vector3 directionWithSpread = direction + new Vector3(x, y, 0);
+
+                projectile.GetComponent<Rigidbody>().AddForce(directionWithSpread, ForceMode.Impulse);
+            }
 
             alreadyAttacked = true;
             Invoke("ResetAttack", rateOfFire);
