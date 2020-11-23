@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class EnemyController : MonoBehaviour
+public class SearchAndDestroy : MonoBehaviour
 {
     public GameObject player;
     public NavMeshAgent agent;
-    public Animator animator;
 
     // Patroling
     public LayerMask whatIsGround, whatIsPlayer, whatIsObstacle;
@@ -29,7 +28,6 @@ public class EnemyController : MonoBehaviour
     void Awake(){
         player = GameObject.FindWithTag("Player");
         agent = GetComponent<NavMeshAgent>();
-        animator = GetComponent<Animator>();
     }
 
     void Update()
@@ -45,7 +43,6 @@ public class EnemyController : MonoBehaviour
         if (playerInSightRange && playerInAttackRange && !playerInSight) ChasePlayer();
         if (playerInSightRange && playerInAttackRange && playerInSight) AttackPlayer();
 
-        animator.SetBool("IsWalking",  (agent.velocity.magnitude >= 1f));
     }
 
     private void Patroling()
