@@ -34,6 +34,7 @@ public class PlayerController : MonoBehaviour
 
         animator.SetBool("IsWalking", isWalking);
         animator.SetBool("IsRunning", isRunning);
+
     }
 
     float Move()

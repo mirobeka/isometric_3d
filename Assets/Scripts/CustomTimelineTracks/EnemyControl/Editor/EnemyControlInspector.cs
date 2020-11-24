@@ -8,7 +8,7 @@ public class AICommandInspector : Editor
 {
 	private void OnEnable()
 	{
-		SceneView.onSceneGUIDelegate += OnSceneGUI;
+		SceneView.duringSceneGui += OnSceneGUI;
 	}
 
 	public override void OnInspectorGUI()
@@ -19,7 +19,7 @@ public class AICommandInspector : Editor
 
 	private void OnDisable()
 	{
-		SceneView.onSceneGUIDelegate -= OnSceneGUI;
+		SceneView.duringSceneGui -= OnSceneGUI;
 	}
 
 
