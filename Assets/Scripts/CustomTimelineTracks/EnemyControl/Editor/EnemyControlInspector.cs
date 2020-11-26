@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
-[CustomEditor(typeof(EnemyControlAsset))]
+[CustomEditor(typeof(EnemyControlClip))]
 public class AICommandInspector : Editor
 {
 	private void OnEnable()

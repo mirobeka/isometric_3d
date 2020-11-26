@@ -9,6 +9,7 @@ public class TimelineTrigger : MonoBehaviour
 
 	void Start () {
         GetComponent<MeshRenderer>().enabled = false;
+        GetComponent<BoxCollider>().enabled = false;
 	}
 
     private void OnTriggerEnter(Collider other){

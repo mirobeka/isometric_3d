@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
@@ -17,6 +18,7 @@ public class PlayerController : MonoBehaviour
     float turnSmoothVelocity;
 
     // isometric direction vectors
+    // these needs to be added to controls direction vector
     private Vector3 forwardDirection = new Vector3(0.6f, 0f, 0.6f);
     private Vector3 rightDirection = new Vector3(0.6f, 0f, -0.6f);
 
@@ -24,13 +26,36 @@ public class PlayerController : MonoBehaviour
     private float vSpeed = 0f;
     private float gravity = -9.81f;
 
+    // controls
+    private InputMaster controls = null;
+    private Vector2 moveVector = Vector2.zero;
+    private bool isRunning = false;
+
+    // Interactions
+    public GameObject focusObject = null;
+    public bool carryingObject = false;
+
+    void Awake(){
+        controls = new InputMaster();
+
+        // define all controls / interaction / etc
+        controls.Gameplay.Move.performed += ctx => moveVector = ctx.ReadValue<Vector2>();
+        controls.Gameplay.Move.canceled += ctx => moveVector = Vector2.zero;
+
+        controls.Gameplay.Run.performed += ctx => isRunning = true;
+        controls.Gameplay.Run.canceled += ctx => isRunning = false;
+
+        controls.Gameplay.Interact.performed += ctx => StartInteract();
+        // this needs to be handled better way. This is buggy
+        // controls.Gameplay.Interact.performed += ctx => StopInteract();
+    }
+
     // Update is called once per frame
     void Update()
     {
         float velocity = Move();
         // Set the animator
         bool isWalking = velocity >= 0.1f;
-        bool isRunning = velocity > 2.1f;
 
         animator.SetBool("IsWalking", isWalking);
         animator.SetBool("IsRunning", isRunning);
@@ -42,11 +67,10 @@ public class PlayerController : MonoBehaviour
         // get the horizontal and vertical buttons
         // use right and forward direction vectors to fix movement in
         // isometric view
-        Vector3 horizontal = rightDirection * Input.GetAxisRaw("Horizontal");
-        Vector3 vertical = forwardDirection * Input.GetAxisRaw("Vertical");
+        Vector3 horizontal = rightDirection * moveVector.x;
+        Vector3 vertical = forwardDirection * moveVector.y;
 
         // check if player is running
-        bool isRunning = Input.GetKey("left shift");
         float moveSpeed = isRunning ? runSpeed : walkSpeed;
 
         // create direction vector
@@ -105,5 +129,39 @@ public class PlayerController : MonoBehaviour
 
         // Apply the push
         body.velocity = pushDir * pushPower;
+    }
+
+    void StartInteract(){
+        if (focusObject != null){
+            // check if we are interacting with pickupable object
+            if (focusObject.GetComponent<Pickup>() != null){
+                focusObject.GetComponent<Interactable>().Interact();
+                // TODO: is this assumption dangerous?
+                // assuming that interaction with this object is to drop it
+                carryingObject = !carryingObject;
+            }else{
+                // otherwise just interact with the bloody thing!
+                focusObject.GetComponent<Interactable>().Interact();
+            }
+
+        }else{
+            Debug.Log("Nothing in focus");
+        }
+    }
+
+    void StopInteract(){
+        if (focusObject != null){
+            Debug.Log("Stopping interaction with " + focusObject.name);
+        }else{
+            Debug.Log("Nothing in focus");
+        }
+    }
+
+    void OnEnable(){
+        controls.Gameplay.Enable();
+    }
+
+    void OnDisable(){
+        controls.Gameplay.Disable();
     }
 }
