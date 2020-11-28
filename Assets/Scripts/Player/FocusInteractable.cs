@@ -68,7 +68,7 @@ public class FocusInteractable : MonoBehaviour
             return;
         }
 
-        GameObject focusObject = itemsInFocus.Values[0];
+        GameObject focusObject = itemsInFocus.Values[itemsInFocus.Count -1 ];
         // nothing to focus
         if (focusObject == null){
             return;
