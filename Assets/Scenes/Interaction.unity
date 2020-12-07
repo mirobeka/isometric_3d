@@ -1083,7 +1083,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh54628
+  m_Name: pb_Mesh18038
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -3149,7 +3149,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-113886
+  m_Name: pb_Mesh18098
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -7998,7 +7998,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u010Eakujem. Dal by som si v\xEDnko"
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -8008,7 +8008,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColor: {r: 1, g: 1, b: 1, a: 0}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -12950,7 +12950,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Miriak
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -12960,7 +12960,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColor: {r: 1, g: 1, b: 1, a: 0}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -13333,7 +13333,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-113230
+  m_Name: pb_Mesh18002
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -14977,7 +14977,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-113698
+  m_Name: pb_Mesh17834
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -16720,7 +16720,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-106452
+  m_Name: pb_Mesh17696
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -17071,7 +17071,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1848169725}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.3010712, y: -16.19022, z: -100.042274}
+  m_LocalPosition: {x: -2.4008217, y: -14.206648, z: -100.04228}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 357244083}
@@ -17195,9 +17195,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a78da3f00f3328541b4526c0b0b5ec5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lineThickness: 1
+  lineThickness: 3
   lineIntensity: 1
-  fillAmount: 0
+  fillAmount: 0.4
   lineColor0: {r: 1, g: 0.87929595, b: 0, a: 1}
   lineColor1: {r: 0, g: 1, b: 0, a: 1}
   lineColor2: {r: 0, g: 0, b: 1, a: 1}
@@ -17207,7 +17207,7 @@ MonoBehaviour:
   useFillColor: 0
   cornerOutlines: 0
   addLinesBetweenColors: 0
-  scaleWithScreenSize: 1
+  scaleWithScreenSize: 0
   alphaCutoff: 0.5
   flipY: 0
   sourceCamera: {fileID: 1848169728}
@@ -18123,7 +18123,7 @@ MonoBehaviour:
   pushPower: 2
   animator: {fileID: 1993290085}
   focusObject: {fileID: 0}
-  carryingObject: {fileID: 0}
+  carryingObject: 0
 --- !u!143 &1993290084
 CharacterController:
   m_ObjectHideFlags: 0
@@ -18386,8 +18386,8 @@ MonoBehaviour:
   m_YDamping: 1
   m_ZDamping: 1
   m_TargetMovementOnly: 1
-  m_ScreenX: 0.5
-  m_ScreenY: 0.5
+  m_ScreenX: 0.6986757
+  m_ScreenY: 0.6416839
   m_CameraDistance: 100
   m_DeadZoneWidth: 0.29
   m_DeadZoneHeight: 0.21
@@ -20098,7 +20098,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2099443609}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.3010712, y: -16.19022, z: -100.042274}
+  m_LocalPosition: {x: -2.4008217, y: -14.206648, z: -100.04228}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2026873430}
