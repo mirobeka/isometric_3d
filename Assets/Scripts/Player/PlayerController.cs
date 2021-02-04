@@ -76,7 +76,9 @@ public class PlayerController : MonoBehaviour
         float moveSpeed = isRunning ? runSpeed : walkSpeed;
 
         // create direction vector
-        Vector3 direction = Vector3.Normalize(horizontal + vertical);
+        // Vector3 direction = Vector3.Normalize(horizontal + vertical);
+        // try not to normalize the direction vector (better for controller)
+        Vector3 direction = horizontal + vertical;
         Vector3 speed = new Vector3(0f, 0f, 0f);
 
         if (direction.magnitude >= 0.1f)
