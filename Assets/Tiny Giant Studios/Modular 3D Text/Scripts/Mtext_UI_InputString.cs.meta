@@ -1,0 +1,26 @@
+fileFormatVersion: 2
+guid: f7329c08a7fbd624b86779530ab16d0e
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - text: {instanceID: 0}
+  - background: {instanceID: 0}
+  - placeHolderTextMat: {fileID: 2100000, guid: c958ce690de9a0841b7b2d7f597ac79a,
+      type: 2}
+  - inFocusTextMat: {fileID: 2100000, guid: 323309279f3626a4ba74c611555546c5, type: 2}
+  - inFocusBackgroundMat: {fileID: 2100000, guid: 01026a7aa911b8543bf3d8c45775fe16,
+      type: 2}
+  - outOfFocusTextMat: {fileID: 2100000, guid: 323309279f3626a4ba74c611555546c5, type: 2}
+  - outOfFocusBackgroundMat: {fileID: 2100000, guid: b1b4721719ff98b4abf45943c7e47451,
+      type: 2}
+  - disabledTextMat: {fileID: 2100000, guid: b1b4721719ff98b4abf45943c7e47451, type: 2}
+  - disabledBackgroundMat: {fileID: 2100000, guid: b1b4721719ff98b4abf45943c7e47451,
+      type: 2}
+  - typeSound: {instanceID: 0}
+  - audioSource: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

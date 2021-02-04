@@ -23,7 +23,8 @@ public class TimelineTrigger : MonoBehaviour
     }
 
     private void PlayTimelineAsset(){
-        GameManager.Instance.SetTimelinePlayable(scene);
+        if (scene != null)
+            GameManager.Instance.SetTimelinePlayable(scene);
     }
 
 }

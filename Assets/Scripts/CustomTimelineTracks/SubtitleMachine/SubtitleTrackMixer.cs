@@ -2,18 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Playables;
-using TMPro;
+using MText;
 
 public class SubtitleTrackMixer : PlayableBehaviour
 {
 
     public override void ProcessFrame(Playable playable, FrameData info, object playerData)
     {
-        TextMeshProUGUI tmpText = playerData as TextMeshProUGUI;
+        GameObject subsObject = playerData as GameObject;
         string currentText = "";
         float currentAlpha = 0f;
 
-        if (!tmpText){return;}
+        if (!subsObject){return;}
 
         int inputCount = playable.GetInputCount();
         for (int i = 0; i < inputCount; i++)
@@ -29,9 +29,16 @@ public class SubtitleTrackMixer : PlayableBehaviour
                 currentAlpha = inputWeight;
             }
         }
+        UpdateText(subsObject, currentText, currentAlpha);
+    }
 
-
-        tmpText.text = currentText;
-        tmpText.color = new Color(1, 1, 1, currentAlpha);
+    public void UpdateText(GameObject subsObject, string newText, float currentAlpha)
+    {
+        Modular3DText[] modularTexts = subsObject.GetComponentsInChildren<Modular3DText>();
+        foreach (Modular3DText modularText in modularTexts)
+        {
+            modularText.UpdateText(newText);
+        }
+        
     }
 }

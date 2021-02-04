@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Timeline;
 using UnityEngine.Playables;
-using TMPro;
 
-[TrackBindingType(typeof(TextMeshProUGUI))]
+[TrackBindingType(typeof(GameObject))]
 [TrackClipType(typeof(SubtitleClip))]
 [TrackClipType(typeof(SubtitleNameClip))]
 public class SubtitleTrack : TrackAsset

@@ -57,8 +57,10 @@ public class PlayerController : MonoBehaviour
         // Set the animator
         bool isWalking = velocity >= 0.1f;
 
-        animator.SetBool("IsWalking", isWalking);
-        animator.SetBool("IsRunning", isRunning);
+        if (animator != null){
+            animator.SetBool("IsWalking", isWalking);
+            animator.SetBool("IsRunning", isRunning);
+        }
 
     }
 
