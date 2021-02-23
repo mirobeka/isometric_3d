@@ -76,7 +76,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 145753807012840274}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.6099999, z: -0.045}
+  m_LocalPosition: {x: 0.000000033527613, y: 1.6099997, z: -0.045000017}
   m_LocalScale: {x: 1, y: 1, z: 0.17909999}
   m_Children: []
   m_Father: {fileID: 145753806663041841}
@@ -361,7 +361,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2341799771517148971}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.6099999, z: -0.099}
+  m_LocalPosition: {x: -0.0000000037252903, y: 1.6099997, z: -0.09899998}
   m_LocalScale: {x: 1, y: 1, z: 0.17909999}
   m_Children: []
   m_Father: {fileID: 145753806663041841}
@@ -391,8 +391,8 @@ MonoBehaviour:
   autoSaveMesh: 0
   font: {fileID: 11400000, guid: 1ace190024086c64180b9311d4e3c634, type: 2}
   oldFont: {fileID: 11400000, guid: 1ace190024086c64180b9311d4e3c634, type: 2}
-  material: {fileID: 2100000, guid: c07befab8ca1540368e662cfe2fddf6b, type: 2}
-  oldMaterial: {fileID: 2100000, guid: c07befab8ca1540368e662cfe2fddf6b, type: 2}
+  material: {fileID: 2100000, guid: 36ed2e46e752ade4e80ac1daa11593ce, type: 2}
+  oldMaterial: {fileID: 2100000, guid: 36ed2e46e752ade4e80ac1daa11593ce, type: 2}
   fontSize: {x: 3, y: 4, z: 1}
   oldFontSize: {x: 3, y: 4, z: 1}
   textDirection: 1
@@ -486,7 +486,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c07befab8ca1540368e662cfe2fddf6b, type: 2}
+  - {fileID: 2100000, guid: 36ed2e46e752ade4e80ac1daa11593ce, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

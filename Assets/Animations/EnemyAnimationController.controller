@@ -6,7 +6,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: PlayerAnimationController
+  m_Name: EnemyAnimationController
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: IsWalking
@@ -308,7 +308,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -6257812643574600770, guid: 09b914c337c8445b8bff18b265eca987,
+  m_Motion: {fileID: 8349542763059015795, guid: 09b914c337c8445b8bff18b265eca987,
     type: 3}
   m_Tag: 
   m_SpeedParameter: 
