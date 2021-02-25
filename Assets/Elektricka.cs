@@ -4,35 +4,49 @@ using UnityEngine;
 
 public class Elektricka : MonoBehaviour
 {
-    public List<Vector3> stops;
-    public float speed = 0.1f;
     public float stopWait = 10;
+    public float travelDistance = 70f;
+    // pohybuj sa iba rovno po x osi
+    public Vector3 directionVector = new Vector3(-4f,0f,0f);
 
-    private int currentStop = 0;
+    private Vector3 startPosition;
     private bool moving = true;
+
+    void Awake(){
+        startPosition = transform.position;
+        moving = true;
+    }
     
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (moving && (transform.position == stops[currentStop])){
+        float currentDistance = Vector3.Distance(startPosition, transform.position);
+
+
+        if ( moving && (currentDistance >= travelDistance)){
+            // time to stop
+            Debug.Log("set moving to false!");
             moving = false;
-            StartCoroutine(selectNextStop());
+            StartCoroutine(waitBeforeMovingAgain());
         }
 
-        transform.position = Vector3.MoveTowards(transform.position, stops[currentStop], speed);
+        if (moving){
+            Vector3 pos = transform.position + directionVector * Time.deltaTime;
+            transform.position = pos;
+        }
+
     }
 
-    private IEnumerator selectNextStop()
+    private IEnumerator waitBeforeMovingAgain()
     {
+        Debug.Log("wait!!");
         // počkaj na zastavke
         yield return new WaitForSeconds(stopWait);
         // TODO: zazvon
 
-        if (currentStop+1 < stops.Count){
-            // nastav ďalšiu zastávku ak ju máš
-            currentStop += 1;
-            moving = true;
-        }
+        Debug.Log("Start moving again");
+        startPosition = transform.position;
+        moving = true;
     }
 }
