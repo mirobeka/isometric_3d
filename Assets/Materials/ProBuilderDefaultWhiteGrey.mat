@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: ProBuilderDefaultRed
+  m_Name: ProBuilderDefaultWhiteGrey
   m_Shader: {fileID: 4800000, guid: 1ccecd9b89b8a4f14bfb64f29ddfcc81, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
@@ -102,7 +102,7 @@ Material:
     - _Wavelength: 0.17857142
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0.8396226, g: 0.11485406, b: 0.1210627, a: 1}
+    - _Color: {r: 0.8584906, g: 0.80761075, b: 0.7815504, a: 1}
     - _Color1: {r: 0.67910445, g: 0.67910445, b: 0.67910445, a: 1}
     - _Color2: {r: 0.14179105, g: 0.14179105, b: 0.14179105, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 0}

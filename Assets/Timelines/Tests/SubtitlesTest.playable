@@ -288,22 +288,6 @@ MonoBehaviour:
     m_DisplayName: EnemyControlClip
   m_Markers:
     m_Objects: []
---- !u!114 &-6421370031920040718
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15c38f6fa1940124db1ab7f6fe7268d1, type: 3}
-  m_Name: Signal Emitter
-  m_EditorClassIdentifier: 
-  m_Time: 8.716666666666667
-  m_Retroactive: 0
-  m_EmitOnce: 1
-  m_Asset: {fileID: 11400000, guid: 529404efe13cc4c309399a642e236f53, type: 2}
 --- !u!114 &-5780407414525507121
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -975,8 +959,7 @@ MonoBehaviour:
   m_Children: []
   m_Clips: []
   m_Markers:
-    m_Objects:
-    - {fileID: -6421370031920040718}
+    m_Objects: []
 --- !u!114 &3706439043654678515
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -989,7 +972,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b52af85f3d6a4f5081b46007206ebc9, type: 3}
   m_Name: EnemyControlClip
   m_EditorClassIdentifier: 
-  targetPosition: {x: 1.7843647, y: 1, z: -1.6088734}
+  targetPosition: {x: 4.262226, y: 1, z: -19.73695}
 --- !u!114 &5151521981363672287
 MonoBehaviour:
   m_ObjectHideFlags: 1
