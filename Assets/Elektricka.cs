@@ -26,7 +26,6 @@ public class Elektricka : MonoBehaviour
 
         if ( moving && (currentDistance >= travelDistance)){
             // time to stop
-            Debug.Log("set moving to false!");
             moving = false;
             StartCoroutine(waitBeforeMovingAgain());
         }
@@ -40,12 +39,10 @@ public class Elektricka : MonoBehaviour
 
     private IEnumerator waitBeforeMovingAgain()
     {
-        Debug.Log("wait!!");
         // počkaj na zastavke
         yield return new WaitForSeconds(stopWait);
         // TODO: zazvon
 
-        Debug.Log("Start moving again");
         startPosition = transform.position;
         moving = true;
     }
