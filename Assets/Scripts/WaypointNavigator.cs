@@ -6,9 +6,11 @@ public class WaypointNavigator : MonoBehaviour
 {
     public UnityEngine.AI.NavMeshAgent agent;
     public Waypoint currentWaypoint;
+    public int direction;
 
     void Awake(){
         agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
+        direction = Mathf.RoundToInt(Random.Range(0f, 1f));
     }
 
     // Start is called before the first frame update
@@ -22,10 +24,39 @@ public class WaypointNavigator : MonoBehaviour
     void Update()
     {
         if(reachedDestination()){
-            currentWaypoint = currentWaypoint.nextWaypoint;
+
+            bool shouldBranch = shouldTakeBranch();
+            if(shouldBranch){
+                currentWaypoint = currentWaypoint.branches[
+                    Random.Range(0, currentWaypoint.branches.Count -1)];
+            }
+
+            if (direction == 0){
+
+                if (currentWaypoint.nextWaypoint != null){
+                    currentWaypoint = currentWaypoint.nextWaypoint;
+                }else{
+                    currentWaypoint = currentWaypoint.previousWaypoint;
+                    direction = 1;
+                }
+            }else if (direction == 1){
+                if (currentWaypoint.previousWaypoint != null){
+                    currentWaypoint = currentWaypoint.previousWaypoint;
+                }else{
+                    currentWaypoint = currentWaypoint.nextWaypoint;
+                    direction = 0;
+                }
+            }
             agent.SetDestination(currentWaypoint.GetPosition());
         }
         
+    }
+    
+    bool shouldTakeBranch(){
+        if(currentWaypoint.branches != null && currentWaypoint.branches.Count > 0){
+            return Random.Range(0f, 1f) <= currentWaypoint.branchRatio ? true : false;
+        }
+        return false;
     }
 
     bool reachedDestination(){
