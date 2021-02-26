@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using AudioHelm;
 
 public class PlayerController : MonoBehaviour
 {
@@ -35,6 +36,12 @@ public class PlayerController : MonoBehaviour
     public GameObject focusObject = null;
     public bool carryingObject = false;
 
+    // Sounds
+    public float walkingFootstepInterval = 0.5f;
+    public float footstepVelocity = 0.3f;
+    private AudioHelm.Sampler helmSampler;
+    private bool invokeRunning = false;
+
     void Awake(){
         controls = new InputMaster();
 
@@ -48,6 +55,8 @@ public class PlayerController : MonoBehaviour
         controls.Gameplay.Interact.performed += ctx => StartInteract();
         // this needs to be handled better way. This is buggy
         // controls.Gameplay.Interact.performed += ctx => StopInteract();
+
+        helmSampler = transform.Find("FootSteps").GetComponent<AudioHelm.Sampler>();
     }
 
     // Update is called once per frame
@@ -62,6 +71,26 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("IsRunning", isRunning);
         }
 
+        handleFootstepSound(isWalking);
+
+    }
+
+    void handleFootstepSound(bool isWalking){
+        if (isWalking && !invokeRunning){
+            invokeRunning = true;
+            InvokeRepeating("PlayRandomFootstep", 0, walkingFootstepInterval);
+        }
+
+        if (!isWalking && invokeRunning){
+            invokeRunning = false;
+            CancelInvoke("PlayRandomFootstep");
+        }
+
+    }
+
+    void PlayRandomFootstep(){
+        int randomFootstep = UnityEngine.Random.Range(60, 66);
+        helmSampler.NoteOn(randomFootstep, footstepVelocity);
     }
 
     float Move()

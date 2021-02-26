@@ -8,32 +8,42 @@ public class TramManager : MonoBehaviour
     public Vector3 spawnPoint1;
     public Vector3 spawnPoint2;
 
+    // neviem to ani vysvetliť, proste to tu musí byť
+    // lebo timing coroutines...
+    private bool semaphore = false;
+
     GameObject tram1;
     GameObject tram2;
 
     void Start(){
+        semaphore = true;
         StartCoroutine(spawnTramWithRandomDelay(1));
-        StartCoroutine(spawnTramWithRandomDelay(2));
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (tram1 == null){
-            spawnTramWithRandomDelay(1);
+        if (tram1 == null && !semaphore){
+            semaphore = true;
+            StartCoroutine(spawnTramWithRandomDelay(1));
         }
 
-        if (tram2 == null){
-            spawnTramWithRandomDelay(1);
+        if (tram2 == null && !semaphore){
+            semaphore = true;
+            StartCoroutine(spawnTramWithRandomDelay(2));
         }
     }
 
 
     IEnumerator spawnTramWithRandomDelay(int tramNumber){
         // počkaj pár sekund aby električky neboli symetricke
-        int delay =  UnityEngine.Random.Range(0, 4);
+        int delay =  UnityEngine.Random.Range(5, 20);
         yield return new WaitForSeconds(delay);
+        spawnTram(tramNumber);
+        semaphore = false;
+    }
 
+    void spawnTram(int tramNumber){
         // vytvor električku
         if(tramNumber == 1){
             tram1 = Instantiate(tramPrefab, spawnPoint1, Quaternion.identity, this.transform);
@@ -43,5 +53,6 @@ public class TramManager : MonoBehaviour
             Elektricka tramComponent = tram2.GetComponent<Elektricka>();
             tramComponent.directionVector = tramComponent.directionVector * -1f;
         }
+
     }
 }

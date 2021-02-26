@@ -41,7 +41,7 @@ public class Elektricka : MonoBehaviour
             transform.position = pos;
         }else{
             //fade moving sound to 0
-            float volume = Mathf.Lerp(movingSound.volume, 0f, Time.deltaTime );
+            float volume = Mathf.Lerp(movingSound.volume, 0f, 2f*Time.deltaTime );
             movingSound.volume = volume;
         }
 
