@@ -7,6 +7,7 @@ public class TimelineTrigger : MonoBehaviour
 {
     public TimelineAsset scene;
     public bool isEnabled = false;
+    public bool wasTriggered = false;
 
 	void Start () {
         DisableTrigger();
@@ -17,12 +18,12 @@ public class TimelineTrigger : MonoBehaviour
         if (other.tag == "Player"){
             PlayTimelineAsset();
             // disable further triggers
-            GetComponent<BoxCollider>().enabled = false;
-            GetComponent<MeshRenderer>().enabled = false;
+            DisableTrigger();
+            wasTriggered = true;
         }
     }
 
-    private void PlayTimelineAsset(){
+    public void PlayTimelineAsset(){
         if (scene != null)
             GameManager.Instance.SetTimelinePlayable(scene);
     }

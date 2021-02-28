@@ -190,6 +190,20 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void NastupDoVozidla(){
+        // zmeň root na root vozidla
+        // ale ako ho nájsť????
+        // TODO: doplň toto
+        
+        // zruš behanie
+        controls.Gameplay.Disable();
+
+        // skry vizuál ale všetko ostatné nechaj
+        GameObject visual = transform.Find("Visual").gameObject;
+        visual.SetActive(false);
+
+    }
+
     void OnEnable(){
         controls.Gameplay.Enable();
     }

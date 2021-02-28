@@ -7,6 +7,7 @@ public class CasovacDoOdchodu : MonoBehaviour
 {
     public float timeRemaining = 10f;
     public bool timerIsRunning = true;
+    public GameObject autobus;
 
     public TMPro.TextMeshProUGUI timeLabel;
 
@@ -22,19 +23,26 @@ public class CasovacDoOdchodu : MonoBehaviour
         if (timerIsRunning){
             DoCountdown();
         }
+
+        UpdateUITimer();
     }
 
     void DoCountdown(){
         if (timeRemaining > 0){
             timeRemaining -= Time.deltaTime;
-
-        }else{
-            Debug.Log("Timer finished");
-            timeRemaining = 0;
-            timerIsRunning = false;
         }
 
-        UpdateUITimer();
+        if (timeRemaining <= 0){
+            timeRemaining = 0;
+            timerIsRunning = false;
+            ExecuteTimerTrigger();
+        }
+    }
+
+    // funkcia ktorá sa vykoná keď dobehne timer
+    void ExecuteTimerTrigger(){
+        // naštartuj autobus
+        autobus.SetActive(true);
     }
     
     void UpdateUITimer(){
