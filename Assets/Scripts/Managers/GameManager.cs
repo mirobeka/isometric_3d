@@ -19,4 +19,11 @@ public class GameManager : Singleton<GameManager>
         director.Play();
     }
 
+    public void FinishGame(){
+        Debug.Log("Game Finished!");
+    }
+
+    public void GameOver(){
+        Debug.Log("Game Over!");
+    }
 }

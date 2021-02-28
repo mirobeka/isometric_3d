@@ -13,11 +13,16 @@ public class Elektricka : MonoBehaviour
     private bool moving = true;
     private AudioSource movingSound;
     private AudioSource bellSound;
+    private AudioSource idleSound;
 
     void Awake(){
         startPosition = transform.position;
         moving = true;
         movingSound = transform.Find("Sounds/MovingSound").GetComponent<AudioSource>();
+        var idleSoundObject = transform.Find("Sounds/IdleSound");
+        if (idleSoundObject != null){
+            idleSound = idleSoundObject.GetComponent<AudioSource>();
+        }
         bellSound = transform.Find("Sounds/BellSound").GetComponent<AudioSource>();
     }
     
@@ -34,8 +39,15 @@ public class Elektricka : MonoBehaviour
         }
 
         if (moving){
-            float volume = Mathf.Lerp(movingSound.volume, 1f, Time.deltaTime );
-            movingSound.volume = volume;
+            // fade in moving until full volume
+            float movingVolume = Mathf.Lerp(movingSound.volume, 1f, Time.deltaTime );
+            movingSound.volume = movingVolume;
+
+            // fade out idle until zero volume
+            if (idleSound != null){
+                float idleVolume = Mathf.Lerp(idleSound.volume, 0f, 2f*Time.deltaTime );
+                idleSound.volume = idleVolume;
+            }
 
             Vector3 pos = transform.position + directionVector * Time.deltaTime;
             transform.position = pos;
@@ -43,6 +55,12 @@ public class Elektricka : MonoBehaviour
             //fade moving sound to 0
             float volume = Mathf.Lerp(movingSound.volume, 0f, 2f*Time.deltaTime );
             movingSound.volume = volume;
+
+            // fade in idle to 1
+            if (idleSound != null){
+                float idleVolume = Mathf.Lerp(idleSound.volume, 1f, Time.deltaTime );
+                idleSound.volume = idleVolume;
+            }
         }
 
     }
