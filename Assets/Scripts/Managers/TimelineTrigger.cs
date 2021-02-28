@@ -6,10 +6,10 @@ using UnityEngine.Timeline;
 public class TimelineTrigger : MonoBehaviour
 {
     public TimelineAsset scene;
+    public bool isEnabled = false;
 
 	void Start () {
-        GetComponent<MeshRenderer>().enabled = false;
-        GetComponent<BoxCollider>().enabled = false;
+        DisableTrigger();
 	}
 
     private void OnTriggerEnter(Collider other){
@@ -26,6 +26,19 @@ public class TimelineTrigger : MonoBehaviour
         if (scene != null)
             GameManager.Instance.SetTimelinePlayable(scene);
     }
+
+    public void EnableTrigger(){
+        GetComponent<MeshRenderer>().enabled = true;
+        GetComponent<BoxCollider>().enabled = true;
+        isEnabled = true;
+    }
+
+    public void DisableTrigger(){
+        GetComponent<MeshRenderer>().enabled = false;
+        GetComponent<BoxCollider>().enabled = false;
+        isEnabled = false;
+    }
+
 
 }
 

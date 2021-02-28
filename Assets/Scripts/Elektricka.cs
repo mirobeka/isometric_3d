@@ -10,7 +10,7 @@ public class Elektricka : MonoBehaviour
     public Vector3 directionVector = new Vector3(-4f,0f,0f);
 
     private Vector3 startPosition;
-    private bool moving = true;
+    public bool moving = true;
     private AudioSource movingSound;
     private AudioSource bellSound;
     private AudioSource idleSound;
