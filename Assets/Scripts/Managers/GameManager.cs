@@ -20,8 +20,10 @@ public class GameManager : Singleton<GameManager>
         director.Play();
     }
 
-    public void FinishGame(){
+    public void NextScene(){
         Debug.Log("Game Finished!");
+        Scene currentScene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(currentScene.name);
     }
 
     public void GameOver(){
