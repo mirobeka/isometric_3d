@@ -63,4 +63,15 @@ public class FollowPlayer : MonoBehaviour
         }
         agent.stoppingDistance = newDistance;
     }
+
+    public void StartFacingEachOther(){
+        standToSide = false;
+        faceToFace = true;
+    }
+
+    public void WalkSideToSide(){
+        standToSide = true;
+        faceToFace = false;
+    }
+
 }

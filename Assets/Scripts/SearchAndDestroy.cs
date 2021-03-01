@@ -115,6 +115,18 @@ public class SearchAndDestroy : MonoBehaviour
         }
     }
 
+    public void SingleShoot()
+    {
+        GameObject projectile = Instantiate(projectilePrefab, shootPoint.transform.position, shootPoint.transform.rotation);
+        Vector3 direction = transform.forward.normalized * shootForce;
+        // randomize shells
+        float x = Random.Range(-0.1f, 0.1f);
+        float y = Random.Range(-0.1f, 0.1f);
+        Vector3 directionWithSpread = direction + new Vector3(x, y, 0);
+
+        projectile.GetComponent<Rigidbody>().AddForce(directionWithSpread, ForceMode.Impulse);
+    }
+
     private void ResetAttack()
     {
         alreadyAttacked = false;

@@ -55,4 +55,8 @@ public class CasovacDoOdchodu : MonoBehaviour
         timeLabel.text = string.Format("{0:00}:{1:00}", minutes, seconds);
     }
 
+    public void StartTimer(){
+        timerIsRunning = true;
+    }
+
 }

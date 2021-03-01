@@ -27,8 +27,7 @@ public class SubtitleTrackMixer : PlayableBehaviour
 
                 currentText = input.subtitleText;
                 currentAlpha = inputWeight;
-            }
-        }
+            }        }
         UpdateText(subsObject, currentText, currentAlpha);
     }
 
