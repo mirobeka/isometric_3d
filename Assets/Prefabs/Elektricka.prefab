@@ -1432,6 +1432,7 @@ GameObject:
   - component: {fileID: 7422578586407646279}
   - component: {fileID: 442635479284697781}
   - component: {fileID: 6344951941622652106}
+  - component: {fileID: 1389633774586664375}
   m_Layer: 12
   m_Name: Elektricka
   m_TagString: Elektricka
@@ -1470,6 +1471,7 @@ MonoBehaviour:
   stopWait: 4
   travelDistance: 70
   directionVector: {x: -4, y: 0, z: 0}
+  moving: 1
 --- !u!54 &442635479284697781
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1497,5 +1499,21 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 8.998388, y: 2.7739582, z: 2.0134983}
-  m_Center: {x: 5.039048, y: 0.8869791, z: -0.50674915}
+  m_Size: {x: 8.131322, y: 2.9278195, z: 2.019319}
+  m_Center: {x: 3.9661326, y: 1.2837521, z: -1.0113213}
+--- !u!208 &1389633774586664375
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7422578586407646278}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 4, y: 1.35, z: 1.05}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 4, y: 1.2, z: -1}
+  m_TimeToStationary: 0.5
