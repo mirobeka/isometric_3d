@@ -14,7 +14,8 @@ public class CasovacDoOdchodu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        timerIsRunning = true;
+        // neštartuj timer hneď, radšej počkaj na signál
+        //timerIsRunning = true;
     }
 
     // Update is called once per frame
@@ -22,6 +23,9 @@ public class CasovacDoOdchodu : MonoBehaviour
     {
         if (timerIsRunning){
             DoCountdown();
+        }else{
+            // Ak časovač nebeží, tak ho vypni
+            timeLabel.text = "";
         }
 
         UpdateUITimer();
