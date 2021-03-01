@@ -8,6 +8,7 @@ public class FollowPlayer : MonoBehaviour
     public UnityEngine.AI.NavMeshAgent agent;
 
     public bool standToSide = false;
+    public bool faceToFace = false;
     public float distance = 2f;
 
     // Start is called before the first frame update
@@ -30,13 +31,25 @@ public class FollowPlayer : MonoBehaviour
 
             Vector3 dest = distanceToLeftSide <= distanceToRightSide ? leftSide : rightSide;
 
+            SetAgentStoppingDistance(0f);
             agent.SetDestination(dest);
             // musíš presne chodiť
-            SetAgentStoppingDistance(0f);
             float distanceToTarget = Vector3.Distance(dest, transform.position);
             if(distanceToTarget <= 1){
                 // ak už si na svojom mieste, otoč sa
                 transform.rotation =  Quaternion.Lerp(transform.rotation, player.transform.rotation, Time.deltaTime);
+            }
+        }else if(faceToFace){
+            Vector3 faceDest = player.transform.position + player.transform.forward * distance;
+
+            SetAgentStoppingDistance(0f);
+            agent.SetDestination(faceDest);
+
+            // ak si dosť blízko, tak sa otoč
+            float distanceToTarget = Vector3.Distance(faceDest, transform.position);
+            if(distanceToTarget <= 0.5){
+                // ak už si na svojom mieste, otoč sa
+                transform.forward = -player.transform.forward;
             }
         }else{
             SetAgentStoppingDistance(1.5f);
