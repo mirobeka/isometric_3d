@@ -21,6 +21,8 @@ public class CasovacDoOdchodu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        UpdateUITimer();
+
         if (timerIsRunning){
             DoCountdown();
         }else{
@@ -28,7 +30,6 @@ public class CasovacDoOdchodu : MonoBehaviour
             timeLabel.text = "";
         }
 
-        UpdateUITimer();
     }
 
     void DoCountdown(){

@@ -8,6 +8,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : Singleton<GameManager>
 {
+    public TimelineAsset gameOverScene;
     private PlayableDirector director;
 
     void Awake(){
@@ -26,9 +27,15 @@ public class GameManager : Singleton<GameManager>
         SceneManager.LoadScene(currentScene.name);
     }
 
-    public void GameOver(){
-        Debug.Log("Game Over!");
+    public void ReloadScene(){
+        Debug.Log("Game Finished!");
         Scene currentScene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(currentScene.name);
+    }
+
+    public void GameOver(){
+        if (gameOverScene != null){
+            SetTimelinePlayable(gameOverScene);
+        }
     }
 }

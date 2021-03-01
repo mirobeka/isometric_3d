@@ -6,6 +6,7 @@ public class PlayerHealth : MonoBehaviour
 {
     public float health = 100f;
     public HealthBar healthBar;
+    public bool isDead = false;
 
     public Renderer mesh;
     public Color collideColor;
@@ -27,8 +28,9 @@ public class PlayerHealth : MonoBehaviour
         // takes damage - flash the player
         StartCoroutine("Flasher");
         
-        if (health <= 0)
+        if (!isDead && health <= 0)
         {
+            isDead = true;
             Die();
         }
     }
