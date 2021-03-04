@@ -51,13 +51,18 @@ public class CasovacDoOdchodu : MonoBehaviour
     }
     
     void UpdateUITimer(){
-        int minutes = Mathf.FloorToInt(timeRemaining / 60);
-        int seconds = Mathf.FloorToInt(timeRemaining % 60);
-        timeLabel.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+        string time = StrfTime();
+        timeLabel.text = time;
     }
 
     public void StartTimer(){
         timerIsRunning = true;
+    }
+
+    public string StrfTime(){
+        int minutes = Mathf.FloorToInt(timeRemaining / 60);
+        int seconds = Mathf.FloorToInt(timeRemaining % 60);
+        return string.Format("{0:00}:{1:00}", minutes, seconds);
     }
 
 }
