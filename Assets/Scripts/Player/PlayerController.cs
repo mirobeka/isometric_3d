@@ -204,11 +204,20 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    void OnEnable(){
+    public void EnableControls(){
         controls.Gameplay.Enable();
     }
 
-    void OnDisable(){
+    public void DisableControls(){
         controls.Gameplay.Disable();
+    }
+
+
+    void OnEnable(){
+        EnableControls();
+    }
+
+    void OnDisable(){
+        DisableControls();
     }
 }
