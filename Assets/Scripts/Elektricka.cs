@@ -64,6 +64,7 @@ public class Elektricka : MonoBehaviour
         }
 
     }
+    
 
     private IEnumerator waitBeforeMovingAgain()
     {
