@@ -5,12 +5,13 @@ using UnityEngine.InputSystem;
 
 public class BikeController : MonoBehaviour
 {
-    public float speed = 2f;
+    public float bikeSpeed = 2f;
+    public float bikeSteering = 4f;
+    public Vector3 scrollSpeed = new Vector3(4f, 0f, 0f);
 
     private InputMaster controls = null;
     private Vector2 moveVector = Vector2.zero;
     private CharacterController controller;
-    private Vector3 scrollSpeed = new Vector3(4f, 0f, 0f);
 
     void Awake()
     {
@@ -23,16 +24,13 @@ public class BikeController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //transform.position = transform.position - transform.forward * Time.deltaTime * speed;
-        Vector3 horizontal = -transform.forward * moveVector.y;
-        Vector3 vertical = -transform.right * moveVector.x;
+        // rovno pripočítaj rýchlosť vytáčania aj rýchlosť motorky
+        Vector3 horizontal = -transform.forward * moveVector.y * bikeSpeed;
+        Vector3 vertical = -transform.right * moveVector.x * bikeSteering;
         Vector3 direction = horizontal + vertical;
 
-        // pridaj rýchlosť
-        direction *= speed;
-
         // pridaj scroll speed vektor
-        direction += scrollSpeed;
+        direction = direction + scrollSpeed;
 
         // posúvaj hráčika
         controller.Move(direction * Time.deltaTime);
