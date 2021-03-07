@@ -5,6 +5,7 @@ using UnityEngine;
 public class RoadManager : MonoBehaviour
 {
     public GameObject[] roadPrefabs;
+    public GameObject[] carPrefabs;
     public float roadLength = 20f;
     public int currentTileNo = 0;
     public Transform playerTransform;
@@ -12,9 +13,7 @@ public class RoadManager : MonoBehaviour
     private List<GameObject> tilesList = new List<GameObject>();
 
     void Start(){
-        SpawnTileAt(0);
         SpawnTileAt(1);
-
     }
 
 
@@ -30,15 +29,36 @@ public class RoadManager : MonoBehaviour
 
             // treba doplniť
             SpawnTileAt(currentTileNo + 1);
+            SpawnCarsAt(currentTileNo + 1);
 
             // treba ubrať
             RemoveTile(currentTileNo - 1);
         }
     }
 
+    // spawns new car at given tile position
+    void SpawnCarsAt(int tileNo){
+        int noOfCars = Random.Range(0, 3);
+        for (int i = 0; i <= noOfCars; i++){
+            int randIdx = Random.Range(0, carPrefabs.Length);
+            GameObject newCar = Instantiate(carPrefabs[randIdx], this.transform);
+
+            float randomXPosition = Random.Range(0f, roadLength);
+            float zPosition = 0f;
+            int direction = Random.Range(0, 2);
+            if (direction == 0){
+                zPosition = -12f;
+            }else{
+                zPosition = -8f;
+            }
+            newCar.GetComponent<AutoController>().direction = direction;
+            newCar.transform.position = new Vector3(tileNo * roadLength + randomXPosition, 0.5f, zPosition);
+        }
+
+    }
+
     void SpawnTileAt(int tileNo){
         int randIdx = Random.Range(0, roadPrefabs.Length);
-
         GameObject newTile = Instantiate(roadPrefabs[randIdx], this.transform);
         newTile.transform.position = new Vector3(tileNo * roadLength, 0f, 0f);
         // newTile.transform.position.x = tileNo * roadLength;
@@ -47,10 +67,9 @@ public class RoadManager : MonoBehaviour
 
     void RemoveTile(int tileNo){
         GameObject oldTile = tilesList[tileNo];
-        //TODO: play faling animation
-        Rigidbody tileRb = oldTile.AddComponent<Rigidbody>();
-        tileRb.mass = 1;
-        AddRandomPush(tileRb);
+        // Rigidbody tileRb = oldTile.AddComponent<Rigidbody>();
+        // tileRb.mass = 1;
+        // AddRandomPush(tileRb);
         StartCoroutine(DeleteAfterSeconds(10, oldTile));
     }
 
