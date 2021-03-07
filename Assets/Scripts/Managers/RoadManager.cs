@@ -37,7 +37,7 @@ public class RoadManager : MonoBehaviour
     }
 
     void SpawnTileAt(int tileNo){
-        int randIdx = Random.Range(0, roadPrefabs.Length-1);
+        int randIdx = Random.Range(0, roadPrefabs.Length);
 
         GameObject newTile = Instantiate(roadPrefabs[randIdx], this.transform);
         newTile.transform.position = new Vector3(tileNo * roadLength, 0f, 0f);

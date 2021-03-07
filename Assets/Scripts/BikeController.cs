@@ -12,6 +12,8 @@ public class BikeController : MonoBehaviour
     private InputMaster controls = null;
     private Vector2 moveVector = Vector2.zero;
     private CharacterController controller;
+    private float gravity = -9.81f;
+    private float vSpeed = 0f;
 
     void Awake()
     {
@@ -34,6 +36,13 @@ public class BikeController : MonoBehaviour
 
         // posúvaj hráčika
         controller.Move(direction * Time.deltaTime);
+
+        // gravity
+        vSpeed += gravity * Time.deltaTime;
+        if (controller.isGrounded)
+            vSpeed = 0f;
+        Vector3 velocity = new Vector3(0f, vSpeed, 0f);
+        controller.Move(velocity * Time.deltaTime);
     }
 
     public void EnableControls(){
