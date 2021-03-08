@@ -7,6 +7,7 @@ public class PlayerHealth : MonoBehaviour
     public float health = 100f;
     public HealthBar healthBar;
     public bool isDead = false;
+    public float damageMultiplier = 0.1f;
 
     public Renderer mesh;
     public Color collideColor;
@@ -22,7 +23,7 @@ public class PlayerHealth : MonoBehaviour
 
     public void TakeDamage(float amount)
     {
-        health -= amount*0.1f;
+        health -= amount*damageMultiplier;
         healthBar.SetHealth(health);
 
         // takes damage - flash the player

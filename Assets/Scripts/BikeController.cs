@@ -8,6 +8,7 @@ public class BikeController : MonoBehaviour
     public float bikeSpeed = 2f;
     public float bikeSteering = 4f;
     public Vector3 scrollSpeed = new Vector3(4f, 0f, 0f);
+    public float pushPower = 2.0f;
 
     private InputMaster controls = null;
     private Vector2 moveVector = Vector2.zero;
@@ -43,6 +44,33 @@ public class BikeController : MonoBehaviour
             vSpeed = 0f;
         Vector3 velocity = new Vector3(0f, vSpeed, 0f);
         controller.Move(velocity * Time.deltaTime);
+    }
+
+    void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        // ITERACT WITH RIGIDBODY
+        Rigidbody body = hit.collider.attachedRigidbody;
+        // no rigidbody
+        if (body == null || body.isKinematic)
+        {
+            return;
+        }
+
+        // We dont want to push objects below us
+        if (hit.moveDirection.y < -0.3)
+        {
+            return;
+        }
+
+        // Calculate push direction from move direction,
+        // we only push objects to the sides never up and down
+        Vector3 pushDir = new Vector3(hit.moveDirection.x, 0, hit.moveDirection.z);
+
+        // If you know how fast your character is trying to move,
+        // then you can also multiply the push velocity by that.
+
+        // Apply the push
+        body.velocity = pushDir * pushPower;
     }
 
     public void EnableControls(){
