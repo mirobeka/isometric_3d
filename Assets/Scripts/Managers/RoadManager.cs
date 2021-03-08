@@ -9,11 +9,13 @@ public class RoadManager : MonoBehaviour
     public float roadLength = 20f;
     public int currentTileNo = 0;
     public Transform playerTransform;
+    public GameObject lastCar;
+    public float minDistanceToLastCar = 20f;
 
     private List<GameObject> tilesList = new List<GameObject>();
 
     void Start(){
-        SpawnTileAt(1);
+        StartCoroutine(SpawnTileAt(1));
     }
 
 
@@ -28,41 +30,61 @@ public class RoadManager : MonoBehaviour
             currentTileNo = tileNo;
 
             // treba doplniť
-            SpawnTileAt(currentTileNo + 1);
-            SpawnCarsAt(currentTileNo + 1);
+            StartCoroutine(SpawnTileAt(currentTileNo + 1));
+            // SpawnRandomCarsAt(currentTileNo + 1);
 
             // treba ubrať
             RemoveTile(currentTileNo - 1);
         }
     }
 
-    // spawns new car at given tile position
-    void SpawnCarsAt(int tileNo){
-        int noOfCars = Random.Range(0, 3);
-        for (int i = 0; i <= noOfCars; i++){
-            int randIdx = Random.Range(0, carPrefabs.Length);
-            GameObject newCar = Instantiate(carPrefabs[randIdx], this.transform);
+    public void SpawnCarsAtRightLane(){
+        // xPosition nastavujem podla toho kde sa nachádza hráč
+        // ale ešte aj trošku mágie -> autá v pravo si udržujú minimálnu
+        // vzdialenosť
 
-            float randomXPosition = Random.Range(0f, roadLength);
-            float zPosition = 0f;
-            int direction = Random.Range(0, 2);
-            if (direction == 0){
-                zPosition = -12f;
-            }else{
-                zPosition = -8f;
+        float xPosition = playerTransform.position.x % roadLength;
+        xPosition += (currentTileNo + 1) * roadLength;
+
+        if (lastCar != null){
+            float positionOfLastCar = lastCar.transform.position.x;
+            float distanceToLastCar = xPosition - positionOfLastCar;
+
+            if (distanceToLastCar < minDistanceToLastCar){
+                // auto by sa spawnlo príliš blízko k poslednému autu
+                float randomOffset = Random.Range(0f, 5f); //some random offset
+                xPosition = positionOfLastCar + minDistanceToLastCar + randomOffset;
             }
-            newCar.GetComponent<AutoController>().direction = direction;
-            newCar.transform.position = new Vector3(tileNo * roadLength + randomXPosition, 0.5f, zPosition);
         }
-
+        
+        GameObject newCar = SpawnCarAt(xPosition, 0);
+        lastCar = newCar;
     }
 
-    void SpawnTileAt(int tileNo){
+    public void SpawnCarsAtLeftLane(){
+        // xPosition nastavujem podla toho kde sa nachádza hráč
+        float xPosition = playerTransform.position.x % roadLength;
+        xPosition += (currentTileNo + 1) * roadLength;
+        SpawnCarAt(xPosition, 1);
+    }
+
+    GameObject SpawnCarAt(float xPos, int direction){
+        int randIdx = Random.Range(0, carPrefabs.Length);
+        float zPosition = direction == 0 ? -12f : -8f;
+
+        GameObject newCar = Instantiate(carPrefabs[randIdx], this.transform);
+        newCar.GetComponent<AutoController>().direction = direction;
+        newCar.transform.position = new Vector3(xPos, 0.5f, zPosition);
+        return newCar;
+    }
+
+    IEnumerator SpawnTileAt(int tileNo){
         int randIdx = Random.Range(0, roadPrefabs.Length);
         GameObject newTile = Instantiate(roadPrefabs[randIdx], this.transform);
         newTile.transform.position = new Vector3(tileNo * roadLength, 0f, 0f);
         // newTile.transform.position.x = tileNo * roadLength;
         tilesList.Add(newTile);
+        yield return "";
     }
 
     void RemoveTile(int tileNo){
