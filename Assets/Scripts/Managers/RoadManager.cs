@@ -16,6 +16,7 @@ public class RoadManager : MonoBehaviour
 
     void Start(){
         StartCoroutine(SpawnTileAt(1));
+        StartCoroutine(SpawnTileAt(2));
     }
 
 
@@ -30,11 +31,14 @@ public class RoadManager : MonoBehaviour
             currentTileNo = tileNo;
 
             // treba doplniť
-            StartCoroutine(SpawnTileAt(currentTileNo + 1));
+            StartCoroutine(SpawnTileAt(currentTileNo + 2));
             // SpawnRandomCarsAt(currentTileNo + 1);
 
-            // treba ubrať
-            RemoveTile(currentTileNo - 1);
+            // treba ubrať plešinku
+            if (currentTileNo - 2 < 0){
+                return;
+            }
+            RemoveTile(currentTileNo - 2);
         }
     }
 

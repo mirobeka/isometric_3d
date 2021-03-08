@@ -95,7 +95,7 @@ MonoBehaviour:
     m_Start: 2
     m_ClipIn: 0
     m_Asset: {fileID: 6593141451210349806}
-    m_Duration: 6
+    m_Duration: 4
     m_TimeScale: 1
     m_ParentTrack: {fileID: -7654423777861077920}
     m_EaseInDuration: 0.145280122756958
@@ -161,10 +161,10 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: TitulkyClip
   - m_Version: 1
-    m_Start: 8
+    m_Start: 6
     m_ClipIn: 0
     m_Asset: {fileID: -8529510817810427892}
-    m_Duration: 6
+    m_Duration: 4
     m_TimeScale: 1
     m_ParentTrack: {fileID: -7654423777861077920}
     m_EaseInDuration: 0.145280122756958
@@ -310,7 +310,7 @@ MonoBehaviour:
     m_Start: 0
     m_ClipIn: 0
     m_Asset: {fileID: 1914087065053960840}
-    m_Duration: 15.883333333333333
+    m_Duration: 13.016666666666667
     m_TimeScale: 1
     m_ParentTrack: {fileID: -3554842573876826537}
     m_EaseInDuration: 1.272834300994873
@@ -418,7 +418,7 @@ MonoBehaviour:
     m_Start: 0
     m_ClipIn: 0
     m_Asset: {fileID: -6279138096936046039}
-    m_Duration: 15.883333333333333
+    m_Duration: 13.016666666666667
     m_TimeScale: 1
     m_ParentTrack: {fileID: -223757661454252932}
     m_EaseInDuration: 0
@@ -610,7 +610,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15c38f6fa1940124db1ab7f6fe7268d1, type: 3}
   m_Name: Signal Emitter
   m_EditorClassIdentifier: 
-  m_Time: 15.183333333333334
+  m_Time: 12.55
   m_Retroactive: 0
   m_EmitOnce: 0
   m_Asset: {fileID: 11400000, guid: 78d83e7d2622c405b9dc14389b756075, type: 2}
