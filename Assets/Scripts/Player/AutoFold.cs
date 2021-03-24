@@ -5,27 +5,30 @@ using UnityEngine;
 public class AutoFold : MonoBehaviour {
 
     public float fadeRate = 0.5f;
+    public Renderer rend;
 
-    private GameObject normalObject;
-    private GameObject foldedObject;
-    private float fade;
+    public float cutPlanePosition = 1.3f;
+    public float normalPlanePosition = 10f;
+
+    private float _fade; //malá pomocná premenná
     private bool shouldBeFolded = false;
+    private MeshCollider _collider;
 
     public void BeFolded() {
         Fold();
         shouldBeFolded = true;
-        fade = 0f;
+        _fade = 0f;
     }
 
     private void Start() {
-        normalObject = transform.Find("FullSize").gameObject;
-        Transform foldedTransform = transform.Find("CutSize");
-        if(foldedTransform != null){
-            foldedObject = foldedTransform.gameObject;
-            Debug.Log("found folded version");
+        rend = GetComponent<Renderer>();
+        if (rend == null){
+            rend = GetComponentInChildren<Renderer>();
+            _collider = GetComponentInChildren<MeshCollider>();
+            CopyColiderFromChild();
         }
-
-        CopyColiderFromChild();
+        _fade = 1f;
+        shouldBeFolded = false;
 
         // unfold by default
         UnFold();
@@ -33,35 +36,27 @@ public class AutoFold : MonoBehaviour {
 
     // Update is called once per frame
     private void Update() {
-        if (fade >= 1 && !shouldBeFolded){
+        if (_fade >= 1 && !shouldBeFolded){
             // unfold
             UnFold();
-        }
-
-        if (!shouldBeFolded) {
-            fade = Mathf.Min(fade + fadeRate*Time.deltaTime, 1f);
+        }else if(_fade < 1 && !shouldBeFolded) {
+            _fade = Mathf.Min(_fade + fadeRate*Time.deltaTime, 1f);
         }
         shouldBeFolded = false;
     }
 
     void Fold(){
-        normalObject.SetActive(false);
-        if (foldedObject != null){
-            foldedObject.SetActive(true);
-        }
+        rend.material.SetFloat("_PlanePosition", cutPlanePosition);
     }
 
     void UnFold(){
-        normalObject.SetActive(true);
-        if(foldedObject != null){
-            foldedObject.SetActive(false);
-        }
+        rend.material.SetFloat("_PlanePosition", normalPlanePosition);
     }
 
     void CopyColiderFromChild(){
         MeshCollider wallCollider = gameObject.AddComponent<MeshCollider>();
-        MeshCollider fullSizeCollider = normalObject.GetComponent<MeshCollider>();
-        wallCollider.sharedMesh = fullSizeCollider.sharedMesh;
+        wallCollider.sharedMesh = _collider.sharedMesh;
     }
+
 }
 
