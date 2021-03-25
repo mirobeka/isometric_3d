@@ -1487,6 +1487,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1566899912456776320}
     m_Modifications:
+    - target: {fileID: 822883256, guid: e242cbbf1000f4a79a076fa211d7077d, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 907972118df7840b5b6a9e1aa1e6436a, type: 2}
     - target: {fileID: 822883257, guid: e242cbbf1000f4a79a076fa211d7077d, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -1576,6 +1580,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -0.044999372
       objectReference: {fileID: 0}
+    - target: {fileID: 7681474817594719466, guid: e242cbbf1000f4a79a076fa211d7077d,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ca7b9dd1c915e4ab992ab14a9062e728, type: 2}
     - target: {fileID: 8819443507660326072, guid: e242cbbf1000f4a79a076fa211d7077d,
         type: 3}
       propertyPath: m_LocalPosition.x
