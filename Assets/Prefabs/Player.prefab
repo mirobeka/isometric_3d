@@ -1123,6 +1123,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerController: {fileID: 0}
+  pickUpDestination: {fileID: 4407708149630523405}
 --- !u!1 &4622207718722554276
 GameObject:
   m_ObjectHideFlags: 0

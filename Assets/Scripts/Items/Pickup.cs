@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Pickup : Interactable
 {
-    public Transform pickUpDestination;
+    public Transform _pickUpDestination;
     private bool carying = false;
 
     public override void Interact(){
@@ -23,7 +23,7 @@ public class Pickup : Interactable
             transform.rotation = Quaternion.identity;
 
             // set position to pickUpDestination
-            transform.position = pickUpDestination.position;
+            transform.position = _pickUpDestination.position;
             transform.parent = GameObject.Find("Player").transform;
             carying = true;
         }

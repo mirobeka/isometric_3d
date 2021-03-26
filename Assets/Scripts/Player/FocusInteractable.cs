@@ -5,6 +5,7 @@ using UnityEngine;
 public class FocusInteractable : MonoBehaviour
 {
     public PlayerController playerController;
+    public Transform pickUpDestination;
 
     // keep track of objects in focus collider box
     public SortedList<float, GameObject> itemsInFocus = new SortedList<float, GameObject>();
@@ -15,6 +16,11 @@ public class FocusInteractable : MonoBehaviour
 
     private void OnTriggerEnter(Collider item){
         if (item.tag == "Interactable"){
+            // nastav pickupdestination
+            Pickup pick = item.gameObject.GetComponent<Pickup>();
+            if (pick != null){
+                pick._pickUpDestination = pickUpDestination;
+            }
             // get distance
             float distance = Vector3.Distance(item.gameObject.transform.position, transform.position);
 
