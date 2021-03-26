@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Door : MonoBehaviour
 {
-    private Animator doorAnimator;
-    private GameObject doorTrigger;
+    public Animator doorAnimator;
+    public GameObject doorTrigger;
     // Start is called before the first frame update
 
     void Awake(){
@@ -18,13 +18,13 @@ public class Door : MonoBehaviour
         trigger.doorRef = this;
     }
 
-    public void OpenDoor(string sideToOpen){
+    public virtual void OpenDoor(string sideToOpen){
         doorAnimator.Play(sideToOpen);
         StartCoroutine(CloseDoorWithDelay(5));
 
     }
 
-    IEnumerator CloseDoorWithDelay(int delay){
+    public virtual IEnumerator CloseDoorWithDelay(int delay){
         yield return new WaitForSeconds(delay);
         doorAnimator.Play("CloseSide1");
         doorTrigger.SetActive(true);
