@@ -8,23 +8,19 @@ public class Pickup : Interactable
     public override void Interact(){
         if (carying){
             // DROP OBJECT
-            GetComponent<Rigidbody>().isKinematic=false;
-            // GetComponent<Rigidbody>().useGravity=true;
-            // GetComponent<Rigidbody>().freezeRotation=false;
+            gameObject.AddComponent<Rigidbody>();
+
             transform.parent = null;
             carying = false;
         }else{
             // PICK UP OBJECT
-            GetComponent<Rigidbody>().isKinematic=true;
-            // GetComponent<Rigidbody>().useGravity=false;
-            // GetComponent<Rigidbody>().freezeRotation=true;
+            Destroy(GetComponent<Rigidbody>());
 
-            // set rotation to default
-            transform.rotation = Quaternion.identity;
 
             // set position to pickUpDestination
             transform.position = _pickUpDestination.position;
-            transform.parent = GameObject.Find("Player").transform;
+            transform.rotation = _pickUpDestination.rotation;
+            transform.parent = _pickUpDestination.transform;
             carying = true;
         }
     }
