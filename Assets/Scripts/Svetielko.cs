@@ -16,7 +16,14 @@ public class Svetielko : MonoBehaviour
     {
         rndr = GetComponentInChildren<Renderer>();
         svetlo = GetComponentInChildren<Light>();
-        
+        StartCoroutine(AutoVypinac());
+    }
+
+    IEnumerator AutoVypinac() 
+    {
+        yield return new WaitForSeconds(2);
+        svieti = false;
+        StartCoroutine(AutoVypinac());
     }
 
     // Update is called once per frame
@@ -38,4 +45,13 @@ public class Svetielko : MonoBehaviour
         rndr.material = offMaterial;
         svetlo.enabled = false;
     }
+
+    private void OnTriggerStay(Collider other){
+        if (other.tag == "Interactable"){
+        Debug.Log("Stay: Zapni");
+            svieti = true;
+        }
+
+    }
+
 }

@@ -16,7 +16,6 @@ public class Pickup : Interactable
             // PICK UP OBJECT
             Destroy(GetComponent<Rigidbody>());
 
-
             // set position to pickUpDestination
             transform.position = _pickUpDestination.position;
             transform.rotation = _pickUpDestination.rotation;
