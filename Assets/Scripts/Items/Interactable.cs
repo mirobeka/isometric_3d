@@ -8,13 +8,17 @@ public class Interactable : MonoBehaviour
     }
 
     public virtual void Focus(){
-        Outline outline = GetComponent<Outline>();
-        outline.eraseRenderer = false;
+        Outline[] outlines = GetComponentsInChildren<Outline>();
+        foreach(Outline outline in outlines){
+            outline.eraseRenderer = false;
+        }
     }
 
     public virtual void DeFocus(){
-        Outline outline = GetComponent<Outline>();
-        outline.eraseRenderer = true;
+        Outline[] outlines = GetComponentsInChildren<Outline>();
+        foreach(Outline outline in outlines){
+            outline.eraseRenderer = true;
+        }
     }
 
 }

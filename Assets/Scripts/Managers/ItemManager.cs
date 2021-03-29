@@ -31,6 +31,7 @@ public class ItemManager : MonoBehaviour
         GameObject newDestination = Instantiate(destinationPrefab);
         newDestination.transform.position = itemDestinationList[currentItemIdx];
         newDestination.GetComponent<ItemDestination>().itemManager = this;
+        newDestination.GetComponent<ItemDestination>().SetMesh(itemList[currentItemIdx]);
     }
 
     // Start is called before the first frame update
