@@ -7507,7 +7507,7 @@ GameObject:
   - component: {fileID: 3697502989071938745}
   - component: {fileID: 3697502989071938726}
   m_Layer: 16
-  m_Name: "Stol\xEDk"
+  m_Name: Stolik
   m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7521,7 +7521,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3697502989071938727}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.3, y: 1.1, z: -6.3}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.5, y: 0.7, z: 0.5}
   m_Children:
   - {fileID: 3697502988019010217}
