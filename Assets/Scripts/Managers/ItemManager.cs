@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Timeline;
 
 public class ItemManager : MonoBehaviour
 {
@@ -10,12 +11,15 @@ public class ItemManager : MonoBehaviour
     public Vector3[] itemDestinationList;
     public GameObject destinationPrefab;
     public int currentItemIdx = 0;
+    public TimelineAsset scene;
 
     public void ItemInPosition(){
         currentItemIdx += 1;
         if (itemList.Length <= currentItemIdx){
             Debug.Log("Koniec veci!!!");
-            // TODO spusti scénu
+            if(scene != null){
+                GameManager.Instance.SetTimelinePlayable(scene);
+            }
         }else{
             SpawnCurrentItem();
         }
