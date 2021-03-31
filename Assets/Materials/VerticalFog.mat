@@ -20,7 +20,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs: []
     m_Floats:
-    - _IntersectionThresholdMax: 0.04
+    - _IntersectionThresholdMax: 0.1
     m_Colors:
     - _Color: {r: 0.83971167, g: 0.961026, b: 0.9622642, a: 1}
   m_BuildTextureStacks: []

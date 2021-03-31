@@ -4,21 +4,20 @@ using UnityEngine;
 
 public class ItemDestination : MonoBehaviour
 {
-    public Transform finalPosition;
     public ItemManager itemManager;
     public Material placeholderMat;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        finalPosition = transform.Find("FinalPosition");
-    }
 
     public void SetMesh(GameObject newVisualPrefab){
         GameObject origVisual = transform.Find("Visual").gameObject;
         Destroy(origVisual);
 
         GameObject newVisual = Instantiate(newVisualPrefab, this.transform);
+        // vymaz tag
+        newVisual.tag = "Untagged";
+        newVisual.transform.position = this.transform.position;
+        newVisual.transform.rotation = this.transform.rotation;
+
         Renderer[] rs = newVisual.GetComponentsInChildren<Renderer>();
 
         // special material to all meshes in children
@@ -26,11 +25,23 @@ public class ItemDestination : MonoBehaviour
             r.material = placeholderMat;
         }
 
+        // zbav sa niektorých vlastností tohto predmetu
         Rigidbody[] rbs = newVisual.GetComponentsInChildren<Rigidbody>();
-
         // special material to all meshes in children
         foreach(Rigidbody rb in rbs){
             Destroy(rb);
+        }
+
+        BoxCollider[] colliders = newVisual.GetComponentsInChildren<BoxCollider>();
+        // special material to all meshes in children
+        foreach(BoxCollider collider in colliders){
+            Destroy(collider);
+        }
+
+        Pickup[] pus = newVisual.GetComponentsInChildren<Pickup>();
+        // special material to all meshes in children
+        foreach(Pickup pu in pus){
+            Destroy(pu);
         }
     }
 
@@ -38,8 +49,8 @@ public class ItemDestination : MonoBehaviour
     private void OnTriggerEnter(Collider other){
         if (other.tag == "Interactable"){
             Debug.Log("Prisiel do kontaktu");
-            other.gameObject.transform.position = finalPosition.position;
-            other.gameObject.transform.rotation = finalPosition.rotation;
+            other.gameObject.transform.position = transform.position;
+            other.gameObject.transform.rotation = transform.rotation;
 
             //
             itemManager.ItemInPosition();

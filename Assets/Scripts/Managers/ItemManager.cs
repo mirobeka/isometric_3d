@@ -9,7 +9,7 @@ public class ItemManager : MonoBehaviour
     public GameObject[] itemList;
     public Vector3[] itemDestinationList;
     public GameObject destinationPrefab;
-    private int currentItemIdx = 0;
+    public int currentItemIdx = 0;
 
     public void ItemInPosition(){
         currentItemIdx += 1;
@@ -22,7 +22,7 @@ public class ItemManager : MonoBehaviour
 
     }
 
-    public void SpawnCurrentItem(){
+    public virtual void SpawnCurrentItem(){
         // vytvor nový item, polož ho do výťahu
         GameObject newItem = Instantiate(itemList[currentItemIdx]);
         newItem.transform.position = spawnPoint.transform.position;
