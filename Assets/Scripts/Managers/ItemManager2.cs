@@ -15,11 +15,4 @@ public class ItemManager2 : ItemManager
         newDestination.GetComponent<ItemDestination>().SetMesh(itemList[currentItemIdx]);
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        SpawnCurrentItem();
-        
-    }
-
 }

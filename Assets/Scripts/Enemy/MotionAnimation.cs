@@ -5,7 +5,6 @@ using UnityEngine;
 public class MotionAnimation : MonoBehaviour
 {
 
-    public GameObject player;
     public UnityEngine.AI.NavMeshAgent agent;
     public Animator animator;
 

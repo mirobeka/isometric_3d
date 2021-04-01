@@ -37,12 +37,4 @@ public class ItemManager : MonoBehaviour
         newDestination.GetComponent<ItemDestination>().itemManager = this;
         newDestination.GetComponent<ItemDestination>().SetMesh(itemList[currentItemIdx]);
     }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        SpawnCurrentItem();
-        
-    }
-
 }
