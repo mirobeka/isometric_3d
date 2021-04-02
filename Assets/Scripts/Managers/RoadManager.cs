@@ -48,7 +48,7 @@ public class RoadManager : MonoBehaviour
         // vzdialenosť
 
         float xPosition = playerTransform.position.x % roadLength;
-        xPosition += (currentTileNo + 1) * roadLength;
+        xPosition += (currentTileNo + 1) * roadLength + 10;
 
         if (lastCar != null){
             float positionOfLastCar = lastCar.transform.position.x;

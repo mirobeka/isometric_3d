@@ -26237,8 +26237,12 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 944734080, guid: c4857763deec64500b22fb318b09e4d1, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 944734082, guid: c4857763deec64500b22fb318b09e4d1, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: c8b7f8466a01145279d3c8fc22578cd3, type: 3}
     - target: {fileID: 164460442171787115, guid: c4857763deec64500b22fb318b09e4d1,
         type: 3}
       propertyPath: m_LocalScale.x

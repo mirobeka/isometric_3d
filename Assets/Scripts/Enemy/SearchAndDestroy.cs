@@ -25,9 +25,14 @@ public class SearchAndDestroy : MonoBehaviour
     public float rateOfFire = 1;
     public bool alreadyAttacked, playerInSight;
 
+    // Audio
+    public AudioClip[] kissSamples;
+    private AudioSource kissSource;
+
     void Awake(){
         player = GameObject.FindWithTag("Player");
         agent = GetComponent<NavMeshAgent>();
+        kissSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -108,6 +113,7 @@ public class SearchAndDestroy : MonoBehaviour
                 Vector3 directionWithSpread = direction + new Vector3(x, y, 0);
 
                 projectile.GetComponent<Rigidbody>().AddForce(directionWithSpread, ForceMode.Impulse);
+                PlayKissSound();
             }
 
             alreadyAttacked = true;
@@ -125,6 +131,13 @@ public class SearchAndDestroy : MonoBehaviour
         Vector3 directionWithSpread = direction + new Vector3(x, y, 0);
 
         projectile.GetComponent<Rigidbody>().AddForce(directionWithSpread, ForceMode.Impulse);
+        PlayKissSound();
+    }
+
+    void PlayKissSound(){
+        int idx = Random.Range(0, kissSamples.Length-1);
+        kissSource.clip = kissSamples[idx];
+        kissSource.Play();
     }
 
     private void ResetAttack()

@@ -9,12 +9,15 @@ public class BikeController : MonoBehaviour
     public float bikeSteering = 4f;
     public Vector3 scrollSpeed = new Vector3(4f, 0f, 0f);
     public float pushPower = 2.0f;
+    public float engineSoundAccRate = 1f;
 
     private InputMaster controls = null;
     private Vector2 moveVector = Vector2.zero;
     private CharacterController controller;
     private float gravity = -9.81f;
     private float vSpeed = 0f;
+    private float engineRPM = 1f;
+    private AudioSource bikeAudio;
 
     void Awake()
     {
@@ -22,11 +25,21 @@ public class BikeController : MonoBehaviour
         controls.Gameplay.Move.performed += ctx => moveVector = ctx.ReadValue<Vector2>();
         controls.Gameplay.Move.canceled += ctx => moveVector = Vector2.zero;
         controller = GetComponent<CharacterController>();
+        bikeAudio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (moveVector.y == 0){
+            engineRPM = Mathf.Lerp(engineRPM, 1f, engineSoundAccRate);
+        }else if( moveVector.y < 0){
+            engineRPM = Mathf.Lerp(engineRPM, 0.8f, engineSoundAccRate);
+        }else if( moveVector.y > 0){
+            engineRPM = Mathf.Lerp(engineRPM, 1.2f, engineSoundAccRate);
+        }
+        bikeAudio.pitch = engineRPM;
+        
         // rovno pripočítaj rýchlosť vytáčania aj rýchlosť motorky
         Vector3 horizontal = -transform.forward * moveVector.y * bikeSpeed;
         Vector3 vertical = -transform.right * moveVector.x * bikeSteering;
