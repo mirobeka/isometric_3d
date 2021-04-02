@@ -38,8 +38,10 @@ public class AutoFold : MonoBehaviour {
     // niektoré objekty v scéne nemáš ako prefaby (tie veľké čierne plochy), tak som im musel ručne skopírovať hodnotu krivky
     private void Update() {
         timer += Time.deltaTime * (shouldBeFolded ? -1 : +1);
+
         timer = Mathf.Clamp(timer, 0, 1);
-        normalObject.transform.localScale = new Vector3(1, easing.Evaluate(timer), 1);
+
+        normalObject.transform.localScale = new Vector3(normalObject.transform.localScale.x, easing.Evaluate(timer), normalObject.transform.localScale.z);
 
         shouldBeFolded = false;
     }

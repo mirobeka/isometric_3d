@@ -33,11 +33,12 @@ public class ClearSight2 : MonoBehaviour
         foreach (RaycastHit hit in hits)
         {
             AutoFold af = hit.collider.GetComponent<AutoFold>();
-            if (af == null)
-                continue;
-            // no autofold attached? go to next hit 
-            // TODO: maybe implement here a check for GOs that should not be affected like the player
-            af.BeFolded(); // get called every frame to reset the falloff
+            if (af != null){
+                // no autofold attached? go to next hit 
+                // TODO: maybe implement here a check for GOs that should not be affected like the player
+                af.BeFolded(); // get called every frame to reset the falloff
+            }
+
         }
     }
 }
