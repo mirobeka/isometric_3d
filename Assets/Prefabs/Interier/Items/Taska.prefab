@@ -2893,9 +2893,8 @@ GameObject:
   - component: {fileID: 8018071786101968555}
   - component: {fileID: 8018071786101968554}
   - component: {fileID: 8018071786101968549}
-  - component: {fileID: 47756118134500608}
   m_Layer: 16
-  m_Name: "Ta\u0161ka"
+  m_Name: Taska
   m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2960,19 +2959,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pickUpDestination: {fileID: 0}
---- !u!65 &47756118134500608
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8018071786101968551}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.10429108, y: 0.14304566, z: 0.5178368}
-  m_Center: {x: 0.00013133883, y: 0.5905489, z: -0.022284865}
 --- !u!1 &8018071786643497331
 GameObject:
   m_ObjectHideFlags: 0
