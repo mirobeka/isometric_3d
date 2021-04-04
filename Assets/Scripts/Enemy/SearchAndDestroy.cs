@@ -35,6 +35,11 @@ public class SearchAndDestroy : MonoBehaviour
         kissSource = GetComponent<AudioSource>();
     }
 
+    void OnEnable(){
+        agent.stoppingDistance = 2f;
+    }
+
+
     void Update()
     {
         // check for sight range & attack range
@@ -59,7 +64,7 @@ public class SearchAndDestroy : MonoBehaviour
             agent.SetDestination(walkPoint);
 
         Vector3 distanceToWalkPoint = transform.position - walkPoint;
-        if (distanceToWalkPoint.magnitude < agent.stoppingDistance)
+        if (distanceToWalkPoint.magnitude <= agent.stoppingDistance)
             walkPointSet = false;
     }
 
@@ -69,7 +74,7 @@ public class SearchAndDestroy : MonoBehaviour
         float randomX = Random.Range(-walkPointRange, walkPointRange);
 
         // offset from player position
-        walkPoint = new Vector3(player.transform.position.x + randomX, transform.position.y, player.transform.position.z + randomZ);
+        walkPoint = new Vector3(player.transform.position.x + randomX, player.transform.position.y, player.transform.position.z + randomZ);
 
         // check if walkPoint is reachable
         NavMeshPath path = new NavMeshPath();
