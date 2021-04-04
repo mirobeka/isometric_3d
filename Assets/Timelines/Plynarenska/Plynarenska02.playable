@@ -168,6 +168,22 @@ MonoBehaviour:
     m_DisplayName: BackdropClip
   m_Markers:
     m_Objects: []
+--- !u!114 &-2240149015771149781
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15c38f6fa1940124db1ab7f6fe7268d1, type: 3}
+  m_Name: Signal Emitter
+  m_EditorClassIdentifier: 
+  m_Time: 0
+  m_Retroactive: 0
+  m_EmitOnce: 0
+  m_Asset: {fileID: 11400000, guid: 4d84d38e6762c4fd79fe8553c9c2dd14, type: 2}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -184,6 +200,7 @@ MonoBehaviour:
   m_Tracks:
   - {fileID: 8239639988084774813}
   - {fileID: -8710849381533156793}
+  - {fileID: 7383383511765503815}
   m_FixedDuration: 0
   m_EditorSettings:
     m_Framerate: 60
@@ -227,6 +244,30 @@ MonoBehaviour:
   m_Name: TitulkyClip(Clone)(Clone)
   m_EditorClassIdentifier: 
   titulkyText: "A tak si spolu na\u017E\xEDvali \u0161\u0165astne"
+--- !u!114 &7383383511765503815
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b46e36075dd1c124a8422c228e75e1fb, type: 3}
+  m_Name: Signal Track (1)
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_AnimClip: {fileID: 0}
+  m_Locked: 0
+  m_Muted: 0
+  m_CustomPlayableFullTypename: 
+  m_Curves: {fileID: 0}
+  m_Parent: {fileID: 11400000}
+  m_Children: []
+  m_Clips: []
+  m_Markers:
+    m_Objects:
+    - {fileID: -2240149015771149781}
 --- !u!114 &7863787072686863373
 MonoBehaviour:
   m_ObjectHideFlags: 1
