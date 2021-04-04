@@ -839,7 +839,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7c77e1567f6947d99c7ffd288873e0a, type: 3}
   m_Name: TitulkyClip(Clone)(Clone)
   m_EditorClassIdentifier: 
-  titulkyText: "V pekn\xFD jesenn\xFD de\u0148 \u0161li spolu na jeden tak\xFD v\xFDlet..."
+  titulkyText: "V pekn\xFD jesenn\xFD de\u0148 \u0161li spolu na jeden tak\xFD v\xFDlet"
 --- !u!114 &5396286167601767081
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -930,4 +930,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7c77e1567f6947d99c7ffd288873e0a, type: 3}
   m_Name: TitulkyClip(Clone)(Clone)(Clone)
   m_EditorClassIdentifier: 
-  titulkyText: "a nie\u010Do sa stalo"
+  titulkyText: "a nie\u010Do sa stalo..."

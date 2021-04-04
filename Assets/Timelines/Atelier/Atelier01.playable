@@ -939,7 +939,7 @@ MonoBehaviour:
   m_Name: TitulkyClip(Clone)(Clone)(Clone)
   m_EditorClassIdentifier: 
   titulkyText: "Pr\xEDbeh sa za\u010D\xEDna jedn\xE9ho febru\xE1rov\xE9ho ve\u010Dera\nu
-    viki v ateli\xE9ri."
+    Viki v ateli\xE9ri."
 --- !u!114 &5993520746050278437
 MonoBehaviour:
   m_ObjectHideFlags: 1

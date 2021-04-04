@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15c38f6fa1940124db1ab7f6fe7268d1, type: 3}
   m_Name: Signal Emitter
   m_EditorClassIdentifier: 
-  m_Time: 100.03333333333333
+  m_Time: 103.85
   m_Retroactive: 0
   m_EmitOnce: 0
   m_Asset: {fileID: 11400000, guid: 4d84d38e6762c4fd79fe8553c9c2dd14, type: 2}
@@ -76,7 +76,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15c38f6fa1940124db1ab7f6fe7268d1, type: 3}
   m_Name: Signal Emitter
   m_EditorClassIdentifier: 
-  m_Time: 103.5
+  m_Time: 106.38333333333334
   m_Retroactive: 0
   m_EmitOnce: 0
   m_Asset: {fileID: 11400000, guid: 78d83e7d2622c405b9dc14389b756075, type: 2}
@@ -166,7 +166,7 @@ MonoBehaviour:
   m_Children: []
   m_Clips:
   - m_Version: 1
-    m_Start: 0
+    m_Start: 3.316666666666667
     m_ClipIn: 0
     m_Asset: {fileID: -1903142231282967485}
     m_Duration: 2.033333333333333
@@ -235,7 +235,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: Active
   - m_Version: 1
-    m_Start: 99.75
+    m_Start: 103.06666666666656
     m_ClipIn: 0
     m_Asset: {fileID: 7367055822910991197}
     m_Duration: 4.150000000000006
@@ -372,7 +372,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af2009da97c4a48d08c84fcce7b74188, type: 3}
   m_Name: SubtitleClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
   m_EditorClassIdentifier: 
-  subtitleText: ale po case som si uvedomil, ze chcem s niekym byt
+  subtitleText: ale casom sa nazory menia
 --- !u!114 &-4066881495044766116
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -563,7 +563,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af2009da97c4a48d08c84fcce7b74188, type: 3}
   m_Name: SubtitleClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
   m_EditorClassIdentifier: 
-  subtitleText: s tebou...
+  subtitleText: a chcem byt s tebou...
 --- !u!114 &1770034768042075351
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -773,7 +773,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: BackdropClip
   - m_Version: 1
-    m_Start: 99.75
+    m_Start: 103.06666666666656
     m_ClipIn: 0
     m_Asset: {fileID: 3141386850615668894}
     m_Duration: 4.150000000000006
@@ -905,7 +905,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af2009da97c4a48d08c84fcce7b74188, type: 3}
   m_Name: SubtitleClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
   m_EditorClassIdentifier: 
-  subtitleText: vies, mozno som s nikym nchcel byt
+  subtitleText: vies, mozno som s nikym nechcel byt
 --- !u!114 &3873456361633401947
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1445,7 +1445,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: Active
   - m_Version: 1
-    m_Start: 89.63333333333334
+    m_Start: 91.88333333333334
     m_ClipIn: 0
     m_Asset: {fileID: -3495937569807399753}
     m_Duration: 9
@@ -2159,7 +2159,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: SubtitleClip
   - m_Version: 1
-    m_Start: 89.63333333333334
+    m_Start: 91.88333333333334
     m_ClipIn: 0
     m_Asset: {fileID: -4599050902744959789}
     m_Duration: 3.0000000000000004
@@ -2228,7 +2228,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: SubtitleClip
   - m_Version: 1
-    m_Start: 92.63333333333334
+    m_Start: 94.88333333333334
     m_ClipIn: 0
     m_Asset: {fileID: -5981821019828365270}
     m_Duration: 3.0000000000000004
@@ -2297,7 +2297,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: SubtitleClip
   - m_Version: 1
-    m_Start: 96.13333333333334
+    m_Start: 98.38333333333334
     m_ClipIn: 0
     m_Asset: {fileID: -6673180045969392726}
     m_Duration: 2.5000000000000004
@@ -2737,7 +2737,7 @@ MonoBehaviour:
     m_Start: 73.1
     m_ClipIn: 0
     m_Asset: {fileID: -2633176603859133047}
-    m_Duration: 16
+    m_Duration: 17.41666666666667
     m_TimeScale: 1
     m_ParentTrack: {fileID: 8733693338914568640}
     m_EaseInDuration: 0
@@ -3806,7 +3806,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: SubtitleClip
   - m_Version: 1
-    m_Start: 85.1
+    m_Start: 86.51666666666667
     m_ClipIn: 0
     m_Asset: {fileID: 840436124023158042}
     m_Duration: 4
