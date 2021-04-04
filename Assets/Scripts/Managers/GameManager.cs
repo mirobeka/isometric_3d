@@ -22,9 +22,10 @@ public class GameManager : Singleton<GameManager>
     }
 
     public void NextScene(){
-        Debug.Log("Game Finished!");
-        Scene currentScene = SceneManager.GetActiveScene();
-        SceneManager.LoadScene(currentScene.name);
+        // Debug.Log("Game Finished!");
+        // Scene currentScene = SceneManager.GetActiveScene();
+        // SceneManager.LoadScene(currentScene.name);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     public void ReloadScene(){

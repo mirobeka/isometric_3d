@@ -6,8 +6,23 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/01_Atelier.unity
+    guid: 323fa0900c65847fc9d4be9ac6cb201b
+  - enabled: 1
+    path: Assets/Scenes/Obchodna.unity
+    guid: f0c5484f5b2b94ce4b2e452dd3a34f44
+  - enabled: 1
     path: Assets/Scenes/Ride.unity
     guid: bbc6d2be9682f4a538a5e75d8cfdce94
+  - enabled: 1
+    path: Assets/Scenes/Hradza.unity
+    guid: a62bd7a5ff9bd43bc92537c846f8ccb5
+  - enabled: 1
+    path: Assets/Scenes/Plynarenska.unity
+    guid: 6d08a0d3f121542d19658c28ae9bed13
+  - enabled: 1
+    path: Assets/Scenes/Vylet.unity
+    guid: d5f8a9607017542fd882ebf165c18f87
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: e6c4d10da54624402a70540996c32ceb,
       type: 2}
